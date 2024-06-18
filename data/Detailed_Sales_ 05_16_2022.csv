@@ -1,0 +1,954 @@
+Transaction ID,Transaction Date,Terminal ID,,,Receipt Number,Clerk,Sales Total,Tax,Sales Ex Tax
+12382776,16/05/2022 09:01:50,212,,,1,RENSCHE,21,1.91,19.09
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Steak Burger,755,,,1,12.5,11.36,12.5,0
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,CASH,1,,,,20,,,
+,CASH,1,,,,5,,,
+,CHANGE,9996,,,,4,,,
+12382800,16/05/2022 09:12:59,212,,,2,RENSCHE,15.9,1.45,14.45
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Pork Meal,134,,,1,15.9,14.45,15.9,0
+,EFTPOS,2,,,,15.9,,,
+12382801,16/05/2022 09:14:08,212,,,3,RENSCHE,17.91,1.63,16.28
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Lamb Meal,132,,,1,17.91,16.28,19.9,1.99
+,DISCOUNT,0,,,,1.99,,,
+,CASH,1,,,,20,,,
+,CHANGE,9996,,,,2.1,,,
+,CASH ROUNDING,8010,,,,-0.01,,,
+12382827,16/05/2022 09:27:13,211,,,1,RENSCHE,9.5,0.86,8.64
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Bacon & Egg Roll,3,,,1,7.5,6.82,7.5,0
+,Hash Brown,7,,,1,2,1.82,2,0
+,EFTPOS,2,,,,9.5,,,
+12382856,16/05/2022 09:39:03,212,,,4,RENSCHE,8.5,0.77,7.73
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,CASH,1,,,,8.5,,,
+12382861,16/05/2022 09:40:32,211,,,2,RENSCHE,26.4,2.39,24.01
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Big Breakfast,1,,,1,16,14.55,16,0
+,300ML Orange Juice,291,,,1,5.2,4.73,5.2,0
+,300ML Orange Juice,291,,,1,5.2,4.73,5.2,0
+,EFTPOS,2,,,,26.4,,,
+12382877,16/05/2022 09:45:13,211,,,3,RENSCHE,8.5,0.77,7.73
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,EFTPOS,2,,,,8.5,,,
+12382920,16/05/2022 09:56:37,212,,,5,RENSCHE,33.2,3.03,30.17
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,HD Bacon & Egg Burger,1225,,,1,8,7.27,8,0
+,HD Big Breakfast,1228,,,1,17,15.45,17,0
+,Breaky Mushrooms,462,,,1,3.5,3.18,3.5,0
+,Sausage,147,,,1,3.5,3.18,3.5,0
+,Hollandaise PC,940,,,1,1.2,1.09,1.2,0
+,UBER EATS,15,,,,33.2,,,
+12382923,16/05/2022 09:57:46,212,,,6,RENSCHE,6.5,0.59,5.91
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,EFTPOS,2,,,,6.5,,,
+12382949,16/05/2022 10:05:03,211,,,4,RENSCHE,7.5,0.68,6.82
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,EFTPOS,2,,,,7.5,,,
+12382966,16/05/2022 10:08:24,211,,,5,RENSCHE,15,1.36,13.64
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Cheesy Bacon Spud,176,,,1,11,10,11,0
+,600ML Water,264,,,1,4,3.64,4,0
+,CASH,1,,,,50,,,
+,CHANGE,9996,,,,35,,,
+12382971,16/05/2022 10:09:09,211,,,6,RENSCHE,1.2,0.11,1.09
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Sour Cream PC,346,,,1,1.2,1.09,1.2,0
+,CASH,1,,,,1.2,,,
+12382997,16/05/2022 10:16:34,211,,,7,RENSCHE,26.9,2.45,24.45
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,PF Ham & Cheese Toastie,1126,,,1,8.5,7.73,8.5,0
+,Battered Fish Meal,446,,,1,13.5,12.27,13.5,0
+,600ML Mountain Dew,283,,,1,4.9,4.45,4.9,0
+,CASH,1,,,,20,,,
+,CASH,1,,,,10,,,
+,CHANGE,9996,,,,3.1,,,
+12383011,16/05/2022 10:19:55,211,,,8,RENSCHE,13.9,1.26,12.64
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Small Lamb Meal,130,,,1,13.9,12.64,13.9,0
+,EFTPOS,2,,,,13.9,,,
+12383017,16/05/2022 10:21:03,211,,,9,RENSCHE,5.85,0.53,5.32
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Chips,11,,,1,4.95,4.5,5.5,0.55
+,Gravy PC,336,,,1,0.9,0.82,1,0.1
+,DISCOUNT,0,,,,0.65,,,
+,CASH,1,,,,5,,,
+,CASH,1,,,,0.85,,,
+12383029,16/05/2022 10:24:06,211,,,10,RENSCHE,28,2.54,25.46
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Mixed Grill,5,,,1,18.5,16.82,18.5,0
+,Brisket & Egg Burger,752,,,1,9.5,8.64,9.5,0
+,EFTPOS,2,,,,28,,,
+12383043,16/05/2022 10:27:32,211,,,11,RENSCHE,14.9,1.36,13.54
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Grilled Chicken Wrap,1179,,,1,10,9.09,10,0
+,600ML Lemonade,282,,,1,4.9,4.45,4.9,0
+,EFTPOS,2,,,,14.9,,,
+12383061,16/05/2022 10:29:51,211,,,12,RENSCHE,11.5,1.04,10.46
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Bacon & Egg Sandwich,443,,,1,7.5,6.82,7.5,0
+,No Sauce,293,,,1,0,0,0,0
+,Regular White Tea,232,,,1,4,3.64,4,0
+,EFTPOS,2,,,,11.5,,,
+12383070,16/05/2022 10:31:02,212,,,7,RENSCHE,10.1,0.92,9.18
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,Apple Pop Top,326,,,1,3.6,3.27,3.6,0
+,CASH,1,,,,50,,,
+,CHANGE,9996,,,,39.9,,,
+12383075,16/05/2022 10:32:22,212,,,8,RENSCHE,5.5,0.5,5
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,CASH,1,,,,20,,,
+,CHANGE,9996,,,,14.5,,,
+12383091,16/05/2022 10:36:33,211,,,13,RENSCHE,12,1.09,10.91
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Lamb Sub,75,,,1,12,10.91,12,0
+,EFTPOS,2,,,,12,,,
+12383105,16/05/2022 10:40:10,211,,,14,RENSCHE,37.4,3.4,34
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,HD Brisket & Egg Burger,1226,,,1,10.5,9.55,10.5,0
+,+ Cheese,352,,,1,1.5,1.36,1.5,0
+,BBQ Sauce,852,,,1,0,0,0,0
+,HD ROAST LAMB MEAL,1176,,,1,17.5,15.91,17.5,0
+,+ 100g Lamb/Pork Belly,1174,,,1,7.9,7.18,7.9,0
+,UBER EATS,15,,,,37.4,,,
+12383135,16/05/2022 10:48:23,212,,,9,RENSCHE,15.9,1.45,14.45
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Pork Meal,134,,,1,15.9,14.45,15.9,0
+,EFTPOS,2,,,,15.9,,,
+12383156,16/05/2022 10:54:50,212,,,10,RENSCHE,11,1,10
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Pork Sandwich,41,,,1,9,8.18,9,0
+,Tomato & Lettuce,435,,,1,2,1.82,2,0
+,CASH,1,,,,50,,,
+,CHANGE,9996,,,,39,,,
+12383159,16/05/2022 10:55:45,212,,,11,RENSCHE,28.62,2.6,26.02
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Pork Meal,134,,,1,14.31,13.01,15.9,1.59
+,Regular Pork Meal,134,,,1,14.31,13.01,15.9,1.59
+,DISCOUNT,0,,,,3.18,,,
+,EFTPOS,2,,,,28.62,,,
+12383180,16/05/2022 11:00:53,211,,,15,RENSCHE,35.9,3.27,32.63
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Beef Sub,71,,,1,11,10,11,0
+,Large Beef Sub,71,,,1,11,10,11,0
+,Large Chip Meal,501,,,1,4.1,3.73,4.1,0
+,600ML Pepsi,276,,,1,4.9,4.45,4.9,0
+,600ML Sunkist,279,,,1,4.9,4.45,4.9,0
+,CASH,1,,,,20,,,
+,CASH,1,,,,20,,,
+,CHANGE,9996,,,,4.1,,,
+12383186,16/05/2022 11:01:59,211,,,16,RENSCHE,4.1,0.37,3.73
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chip Meal,501,,,1,4.1,3.73,4.1,0
+,CASH,1,,,,4.1,,,
+12383192,16/05/2022 11:03:26,212,,,12,ROB,10,0.91,9.09
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Pork Belly Roll,758,,,1,10,9.09,10,0
+,CASH,1,,,,10,,,
+12383203,16/05/2022 11:08:36,212,,,13,ROB,20.8,1.9,18.9
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Pork Meal,134,,,1,15.9,14.45,15.9,0
+,600ML Pepsi Max,277,,,1,4.9,4.45,4.9,0
+,EFTPOS,2,,,,20.8,,,
+12383207,16/05/2022 11:09:31,212,,,14,ROB,40.8,3.71,37.09
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Roast Beef Wrap,1181,,,1,10,9.09,10,0
+,Meaty Beef Sub,1321,,,1,14.4,13.09,14.4,0
+,600ML Lemonade,282,,,1,4.9,4.45,4.9,0
+,600ML Water,264,,,1,4,3.64,4,0
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,CASH,1,,,,50,,,
+,CHANGE,9996,,,,9.2,,,
+12383215,16/05/2022 11:11:03,212,,,15,RENSCHE,13.5,1.23,12.27
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Pork Crackling Cup,111,,,1,5.5,5,5.5,0
+,Battered Fish,545,,,1,8,7.27,8,0
+,CASH,1,,,,20,,,
+,CHANGE,9996,,,,6.5,,,
+12383217,16/05/2022 11:12:11,211,,,17,RENSCHE,7.5,0.68,6.82
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Mini Beef Roll & Chip,847,,,1,7.5,6.82,7.5,0
+,EFTPOS,2,,,,7.5,,,
+12383224,16/05/2022 11:13:47,211,,,18,RENSCHE,18.9,1.72,17.18
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Beef Meal,126,,,1,18.9,17.18,18.9,0
+,EFTPOS,2,,,,18.9,,,
+12383237,16/05/2022 11:17:18,212,,,16,RENSCHE,17.01,1.55,15.46
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Pork Meal,135,,,1,17.01,15.46,18.9,1.89
+,DISCOUNT,0,,,,1.89,,,
+,EFTPOS,2,,,,17.01,,,
+12383260,16/05/2022 11:24:12,212,,,17,RENSCHE,11,1,10
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Beef Sub,71,,,1,11,10,11,0
+,EFTPOS,2,,,,11,,,
+12383267,16/05/2022 11:25:39,212,,,18,RENSCHE,14.31,1.3,13.01
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Beef Meal,125,,,1,14.31,13.01,15.9,1.59
+,DISCOUNT,0,,,,1.59,,,
+,CASH,1,,,,14.3,,,
+,CASH ROUNDING,8010,,,,-0.01,,,
+12383272,16/05/2022 11:26:14,212,,,19,RENSCHE,5.2,0.47,4.73
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,300ML Orange Juice,291,,,1,5.2,4.73,5.2,0
+,CASH,1,,,,10,,,
+,CHANGE,9996,,,,4.8,,,
+12383299,16/05/2022 11:30:52,211,,,19,RENSCHE,13.5,1.23,12.27
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Battered Fish Meal,446,,,1,13.5,12.27,13.5,0
+,CASH,1,,,,13.5,,,
+12383306,16/05/2022 11:33:13,211,,,20,RENSCHE,24.1,2.19,21.91
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Beef Meal,126,,,1,18.9,17.18,18.9,0
+,300ML Orange Juice,291,,,1,5.2,4.73,5.2,0
+,EFTPOS,2,,,,24.1,,,
+12383326,16/05/2022 11:37:50,212,,,20,RENSCHE,28.71,2.6,26.11
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Battered Fish Meal,446,,,1,12.15,11.05,13.5,1.35
+,Battered Fish Meal,446,,,1,12.15,11.05,13.5,1.35
+,600ML Solo,280,,,1,4.41,4.01,4.9,0.49
+,DISCOUNT,0,,,,3.19,,,
+,CASH,1,,,,50,,,
+,CHANGE,9996,,,,21.3,,,
+,CASH ROUNDING,8010,,,,-0.01,,,
+12383343,16/05/2022 11:40:58,211,,,21,RENSCHE,15.9,1.45,14.45
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Pork Sub,77,,,1,11,10,11,0
+,600ML Pepsi,276,,,1,4.9,4.45,4.9,0
+,EFTPOS,2,,,,15.9,,,
+12383346,16/05/2022 11:42:35,212,,,21,ROB,19.9,1.81,18.09
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Beef Meal,125,,,1,15.9,14.45,15.9,0
+,600ML Water,264,,,1,4,3.64,4,0
+,CASH,1,,,,50,,,
+,CHANGE,9996,,,,30.1,,,
+12383359,16/05/2022 11:45:24,212,,,22,ROB,9,0.82,8.18
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chip Meal,501,,,1,4.1,3.73,4.1,0
+,600ML Pepsi,276,,,1,4.9,4.45,4.9,0
+,CASH,1,,,,9,,,
+12383362,16/05/2022 11:45:48,212,,,23,ROB,-9,-0.82,-8.18
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chip Meal,501,,,-1,-4.1,-3.73,-4.1,0
+,600ML Pepsi,276,,,-1,-4.9,-4.45,-4.9,0
+,CASH,1,,,,-9,,,
+12383375,16/05/2022 11:48:12,211,,,22,RENSCHE,22,2,20
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Reg Beef Sub,70,,,1,9,8.18,9,0
+,Large Chip Meal ,1136,,,1,9,8.18,9,0
+,Large Chip Meal,501,,,1,0,0,0,0
+,600ML Water,264,,,1,0,0,0,0
+,600ML Water,264,,,1,4,3.64,4,0
+,EFTPOS,2,,,,22,,,
+12383379,16/05/2022 11:48:53,212,,,24,RENSCHE,8.1,0.74,7.36
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Reg Pork Sub,76,,,1,8.1,7.36,9,0.9
+,DISCOUNT,0,,,,0.9,,,
+,EFTPOS,2,,,,8.1,,,
+12383389,16/05/2022 11:50:35,212,,,25,ROB,11.5,1.04,10.46
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,600ML Water,264,,,1,4,3.64,4,0
+,EFTPOS,2,,,,11.5,,,
+12383408,16/05/2022 11:55:04,211,,,23,RENSCHE,8.5,0.77,7.73
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,CASH,1,,,,8.5,,,
+12383416,16/05/2022 11:56:37,211,,,24,RENSCHE,18.9,1.72,17.18
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,600ML Pepsi Max,277,,,1,4.9,4.45,4.9,0
+,Regular Potato Bake,496,,,1,6.5,5.91,6.5,0
+,CASH,1,,,,50,,,
+,CHANGE,9996,,,,31.1,,,
+12383430,16/05/2022 11:59:16,212,,,26,ROB,19.9,1.81,18.09
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Beef Meal,125,,,1,15.9,14.45,15.9,0
+,600ML Water,264,,,1,4,3.64,4,0
+,EFTPOS,2,,,,19.9,,,
+12383432,16/05/2022 11:59:50,212,,,27,RENSCHE,24.4,2.22,22.18
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,PF Steak Toastie,1182,,,1,11,10,11,0
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,600ML Pepsi Max,277,,,1,4.9,4.45,4.9,0
+,EFTPOS,2,,,,24.4,,,
+12383440,16/05/2022 12:01:39,211,,,25,ROB,43.8,3.99,39.81
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Beef Meal,125,,,1,15.9,14.45,15.9,0
+,600ML Pepsi,276,,,1,4.9,4.45,4.9,0
+,Battered Fish Meal,446,,,1,13.5,12.27,13.5,0
+,Bacon & Egg Roll,3,,,1,7.5,6.82,7.5,0
+,BBQ Sauce,852,,,1,0,0,0,0
+,Hash Brown,7,,,1,2,1.82,2,0
+,EFTPOS,2,,,,43.8,,,
+12383459,16/05/2022 12:04:24,212,,,28,RENSCHE,15.5,1.41,14.09
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Reg Beef Sub,70,,,1,9,8.18,9,0
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,CASH,1,,,,20,,,
+,CHANGE,9996,,,,4.5,,,
+12383463,16/05/2022 12:05:30,212,,,29,RENSCHE,8.5,0.77,7.73
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,EFTPOS,2,,,,8.5,,,
+12383468,16/05/2022 12:06:19,212,,,30,ROB,12.5,1.13,11.37
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Mega Chips,13,,,1,10.5,9.55,10.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,EFTPOS,2,,,,12.5,,,
+12383467,16/05/2022 12:06:29,211,,,26,RENSCHE,6.5,0.59,5.91
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,EFTPOS,2,,,,6.5,,,
+12383475,16/05/2022 12:08:54,211,,,27,RENSCHE,18.72,1.7,17.02
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Beef Meal,125,,,1,14.31,13.01,15.9,1.59
+,600ML Pepsi,276,,,1,4.41,4.01,4.9,0.49
+,DISCOUNT,0,,,,2.08,,,
+,CASH,1,,,,20,,,
+,CHANGE,9996,,,,1.3,,,
+,CASH ROUNDING,8010,,,,-0.02,,,
+12383483,16/05/2022 12:10:32,212,,,31,SAM,13.7,1.24,12.46
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,Lipton Iced Tea Peach,1109,,,1,5.2,4.73,5.2,0
+,CASH,1,,,,15,,,
+,CHANGE,9996,,,,1.3,,,
+12383488,16/05/2022 12:12:03,212,,,32,RENSCHE,5.5,0.5,5
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,EFTPOS,2,,,,5.5,,,
+12383490,16/05/2022 12:12:38,212,,,33,SAM,19.9,1.81,18.09
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Pork Meal,134,,,1,15.9,14.45,15.9,0
+,600ML Water,264,,,1,4,3.64,4,0
+,EFTPOS,2,,,,19.9,,,
+12383512,16/05/2022 12:16:44,212,,,34,RENSCHE,26.91,2.44,24.47
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chips,12,,,1,6.75,6.14,7.5,0.75
+,Large Chips,12,,,1,6.75,6.14,7.5,0.75
+,Gravy PC,336,,,1,0.9,0.82,1,0.1
+,Reg Pork Sub,76,,,1,8.1,7.36,9,0.9
+,600ML Sunkist,279,,,1,4.41,4.01,4.9,0.49
+,DISCOUNT,0,,,,2.99,,,
+,CASH,1,,,,50,,,
+,CHANGE,9996,,,,23.1,,,
+,CASH ROUNDING,8010,,,,-0.01,,,
+12383517,16/05/2022 12:17:18,211,,,28,SAM,18,1.63,16.37
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Sweet Potato Fry,905,,,1,7.5,6.82,7.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,PF Pork Toastie,1128,,,1,9.5,8.64,9.5,0
+,EFTPOS,2,,,,18,,,
+12383531,16/05/2022 12:19:47,211,,,29,ROB,41.4,3.77,37.63
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,HD Gravy,1230,,,1,1.5,1.36,1.5,0
+,HD Beef Carvery Burger,1232,,,1,12,10.91,12,0
+,Gravy,857,,,1,0,0,0,0
+,HD Pork Carvery Burger,1233,,,1,12,10.91,12,0
+,+ Cheese,352,,,1,1.5,1.36,1.5,0
+,+ Egg,360,,,1,2,1.82,2,0
+,Gravy,857,,,1,0,0,0,0
+,600ML Solo,280,,,1,4.9,4.45,4.9,0
+,UBER EATS,15,,,,41.4,,,
+12383536,16/05/2022 12:20:51,211,,,30,RENSCHE,14.4,1.31,13.09
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Meaty Pork Sub,1322,,,1,14.4,13.09,14.4,0
+,CASH,1,,,,5,,,
+,EFTPOS,2,,,,9.4,,,
+12383537,16/05/2022 12:21:12,212,,,35,SAM,11.7,1.06,10.64
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Tropical Spud,178,,,1,11.7,10.64,11.7,0
+,EFTPOS,2,,,,11.7,,,
+12383552,16/05/2022 12:24:47,212,,,36,RENSCHE,20.9,1.9,19
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,HD Brisket Triple Cheese Toastie,1251,,,1,10.5,9.55,10.5,0
+,Pork Crackling Cup,111,,,1,5.5,5,5.5,0
+,600ML Pepsi Max,277,,,1,4.9,4.45,4.9,0
+,UBER EATS,15,,,,20.9,,,
+12383554,16/05/2022 12:25:05,211,,,31,RENSCHE,8.5,0.77,7.73
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Gems,17,,,1,7.5,6.82,7.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,EFTPOS,2,,,,8.5,,,
+12383563,16/05/2022 12:27:00,211,,,32,RENSCHE,20.4,1.86,18.54
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,Roast Pork Wrap,1180,,,1,10,9.09,10,0
+,600ML Mountain Dew,283,,,1,4.9,4.45,4.9,0
+,EFTPOS,2,,,,20.4,,,
+12383574,16/05/2022 12:29:42,211,,,33,ROB,34,3.09,30.91
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,HD Pork Sub,1242,,,1,12,10.91,12,0
+,Pork Crackling Cup,111,,,1,5.5,5,5.5,0
+,HD ROAST BEEF MEAL,864,,,1,16.5,15,16.5,0
+,UBER EATS,15,,,,34,,,
+12383579,16/05/2022 12:31:07,212,,,37,RENSCHE,38.4,3.51,34.89
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Beef Brisket Burger,754,,,1,11.5,10.45,11.5,0
+,Large Chip Meal,501,,,1,4.1,3.73,4.1,0
+,600ML Mountain Dew,283,,,1,4.9,4.45,4.9,0
+,Pork Belly Burger,904,,,1,11.5,10.45,11.5,0
+,Sm Chip Meal,32,,,1,1.5,1.36,1.5,0
+,600ML Solo,280,,,1,4.9,4.45,4.9,0
+,EFTPOS,2,,,,38.4,,,
+12383590,16/05/2022 12:32:58,211,,,34,SAM,34.8,3.17,31.63
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Beef Meal,126,,,1,18.9,17.18,18.9,0
+,Regular Beef Meal,125,,,1,15.9,14.45,15.9,0
+,EFTPOS,2,,,,34.8,,,
+12383594,16/05/2022 12:33:18,212,,,38,RENSCHE,10,0.91,9.09
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,PF Brisket & Cheese Toastie,1127,,,1,10,9.09,10,0
+,CASH,1,,,,20,,,
+,CHANGE,9996,,,,10,,,
+12383600,16/05/2022 12:34:36,212,,,39,RENSCHE,6.5,0.59,5.91
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,EFTPOS,2,,,,6.5,,,
+12383608,16/05/2022 12:36:40,211,,,35,RENSCHE,16.5,1.5,15
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Cheesy Bacon Spud,176,,,1,11,10,11,0
+,Blue Bolt Gatorade,303,,,1,5.5,5,5.5,0
+,EFTPOS,2,,,,16.5,,,
+12383619,16/05/2022 12:38:45,211,,,36,SAM,11.7,1.06,10.64
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Tropical Spud,178,,,1,11.7,10.64,11.7,0
+,EFTPOS,2,,,,11.7,,,
+12383629,16/05/2022 12:40:28,211,,,37,RENSCHE,27.9,2.54,25.36
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Reg Beef Sub,70,,,1,9,8.18,9,0
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,600ML Pepsi,276,,,1,4.9,4.45,4.9,0
+,EFTPOS,2,,,,27.9,,,
+12383634,16/05/2022 12:41:10,212,,,40,ROB,21.9,1.99,19.91
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,600ML Sunkist,279,,,1,4.9,4.45,4.9,0
+,Large Gems,17,,,1,7.5,6.82,7.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,CASH,1,,,,50,,,
+,CHANGE,9996,,,,28.1,,,
+12383661,16/05/2022 12:43:14,211,,,38,SAM,29.8,2.72,27.08
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Battered Fish Meal,446,,,1,13.5,12.27,13.5,0
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,600ML Passiona,284,,,1,4.9,4.45,4.9,0
+,600ML Pepsi,276,,,1,4.9,4.45,4.9,0
+,EFTPOS,2,,,,29.8,,,
+12383669,16/05/2022 12:44:46,211,,,39,RENSCHE,8.5,0.77,7.73
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Gems,17,,,1,7.5,6.82,7.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,EFTPOS,2,,,,8.5,,,
+12383672,16/05/2022 12:45:10,211,,,40,RENSCHE,12.1,1.1,11
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,Apple Pop Top,326,,,1,3.6,3.27,3.6,0
+,CASH,1,,,,10,,,
+,CASH,1,,,,5,,,
+,CHANGE,9996,,,,2.9,,,
+12383675,16/05/2022 12:45:46,211,,,41,SAM,11.5,1.04,10.46
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Mega Gems,18,,,1,10.5,9.55,10.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,EFTPOS,2,,,,11.5,,,
+12383678,16/05/2022 12:46:47,211,,,42,RENSCHE,31.8,2.9,28.9
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Beef Meal,125,,,1,15.9,14.45,15.9,0
+,Regular Pork Meal,134,,,1,15.9,14.45,15.9,0
+,EFTPOS,2,,,,31.8,,,
+12383689,16/05/2022 12:49:01,211,,,43,SAM,32.2,2.93,29.27
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Buttermilk Chicken Burger,1307,,,1,10,9.09,10,0
+,Add Chips Promo,1308,,,1,2,1.82,2,0
+,Regular Gems,16,,,1,5.5,5,5.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,Extra Meat 50g,964,,,1,3.9,3.55,3.9,0
+,600ML Sunkist,279,,,1,4.9,4.45,4.9,0
+,600ML Pepsi Max,277,,,1,4.9,4.45,4.9,0
+,EFTPOS,2,,,,32.2,,,
+12383702,16/05/2022 12:52:48,211,,,44,RENSCHE,8.5,0.77,7.73
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,EFTPOS,2,,,,8.5,,,
+12383704,16/05/2022 12:53:00,211,,,45,SAM,7.5,0.68,6.82
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,EFTPOS,2,,,,7.5,,,
+12383709,16/05/2022 12:53:32,211,,,46,SAM,28,2.54,25.46
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Roast Beef Wrap,1181,,,1,10,9.09,10,0
+,Roast Beef Wrap,1181,,,1,10,9.09,10,0
+,Small Latte,224,,,1,4,3.64,4,0
+,Small Latte,224,,,1,4,3.64,4,0
+,EFTPOS,2,,,,28,,,
+12383721,16/05/2022 12:55:41,211,,,47,ROB,10,0.91,9.09
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,PF Brisket & Cheese Toastie,1127,,,1,10,9.09,10,0
+,EFTPOS,2,,,,10,,,
+12383727,16/05/2022 12:56:46,211,,,48,ROB,17.9,1.63,16.27
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,600ML Sunkist,279,,,1,4.9,4.45,4.9,0
+,CASH,1,,,,17.9,,,
+12383731,16/05/2022 12:58:14,211,,,49,RENSCHE,15.9,1.44,14.46
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Lipton Iced Tea Lemon,1111,,,1,5.2,4.73,5.2,0
+,Lipton Iced Tea Lemon,1111,,,1,5.2,4.73,5.2,0
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,EFTPOS,2,,,,15.9,,,
+12383735,16/05/2022 12:59:03,211,,,50,ROB,10.5,0.95,9.55
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Fish Burger,195,,,1,8.5,7.73,8.5,0
+,+ Onion,354,,,1,1,0.91,1,0
+,+ Tomato,356,,,1,1,0.91,1,0
+,CASH,1,,,,50,,,
+,CHANGE,9996,,,,39.5,,,
+12383740,16/05/2022 12:59:48,211,,,51,RENSCHE,5.5,0.5,5
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,EFTPOS,2,,,,5.5,,,
+12383742,16/05/2022 13:00:04,211,,,52,RENSCHE,5.85,0.53,5.32
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Chips,11,,,1,4.95,4.5,5.5,0.55
+,Gravy PC,336,,,1,0.9,0.82,1,0.1
+,DISCOUNT,0,,,,0.65,,,
+,CASH,1,,,,10,,,
+,CHANGE,9996,,,,4.15,,,
+12383751,16/05/2022 13:01:58,211,,,53,RENSCHE,12.9,1.17,11.73
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Small Beef Meal,124,,,1,12.9,11.73,12.9,0
+,EFTPOS,2,,,,12.9,,,
+12383752,16/05/2022 13:02:36,211,,,54,SAM,14.4,1.31,13.09
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Brisket Topped Chips,815,,,1,9.5,8.64,9.5,0
+,600ML Passiona,284,,,1,4.9,4.45,4.9,0
+,EFTPOS,2,,,,14.4,,,
+12383768,16/05/2022 13:05:32,211,,,55,RENSCHE,6.5,0.59,5.91
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Gems,16,,,1,5.5,5,5.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,EFTPOS,2,,,,6.5,,,
+12383771,16/05/2022 13:05:56,211,,,56,SAM,16.4,1.5,14.9
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Beef Brisket Burger,754,,,1,11.5,10.45,11.5,0
+,600ML Pepsi,276,,,1,4.9,4.45,4.9,0
+,EFTPOS,2,,,,16.4,,,
+12383775,16/05/2022 13:06:58,211,,,57,RENSCHE,20,1.82,18.18
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Pork Belly Burger,904,,,1,11.5,10.45,11.5,0
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,EFTPOS,2,,,,20,,,
+12383782,16/05/2022 13:08:35,211,,,58,SAM,15.9,1.45,14.45
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Beef Meal,125,,,1,15.9,14.45,15.9,0
+,CASH,1,,,,20,,,
+,CHANGE,9996,,,,4.1,,,
+12383793,16/05/2022 13:10:31,211,,,59,RENSCHE,25.49,2.31,23.18
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Pork Crackling Cup,111,,,1,5.5,5,5.5,0
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,300ML Orange Juice,291,,,1,5.2,4.73,5.2,0
+,300ML Orange Juice,291,,,1,5.2,4.73,5.2,0
+,Misc,370,,,1,-0.01,-0.01,-0.01,0
+,Misc,370,,,1,0.1,0.09,0.1,0
+,EFTPOS,2,,,,25.49,,,
+12383801,16/05/2022 13:11:57,212,,,41,SAM,8.5,0.77,7.73
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,EFTPOS,2,,,,8.5,,,
+12383832,16/05/2022 13:18:38,212,,,42,SAM,18.7,1.7,17
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Battered Fish Meal,446,,,1,13.5,12.27,13.5,0
+,Lipton Iced Tea Lemon,1111,,,1,5.2,4.73,5.2,0
+,EFTPOS,2,,,,18.7,,,
+12383843,16/05/2022 13:19:43,212,,,43,SAM,11.61,1.06,10.55
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Small Beef Meal,124,,,1,11.61,10.55,12.9,1.29
+,DISCOUNT,0,,,,1.29,,,
+,EFTPOS,2,,,,11.61,,,
+12383853,16/05/2022 13:21:58,211,,,60,ROB,14.7,1.34,13.36
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Battered Fish Meal,446,,,1,13.5,12.27,13.5,0
+,Tomato Sauce PC,348,,,1,1.2,1.09,1.2,0
+,EFTPOS,2,,,,14.7,,,
+12383856,16/05/2022 13:22:38,211,,,61,ROB,23.2,2.11,21.09
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Reg Beef Sub,70,,,1,9,8.18,9,0
+,Cheese Slaw Spud,539,,,1,9,8.18,9,0
+,Lipton Iced Tea Peach,1109,,,1,5.2,4.73,5.2,0
+,EFTPOS,2,,,,23.2,,,
+12383865,16/05/2022 13:24:23,212,,,44,SAM,19.6,1.79,17.81
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Battered Fish Meal,446,,,1,13.5,12.27,13.5,0
+,Tartare Sauce PC,296,,,1,1.2,1.09,1.2,0
+,600ML Pepsi Max,277,,,1,4.9,4.45,4.9,0
+,EFTPOS,2,,,,19.6,,,
+12383866,16/05/2022 13:24:57,212,,,45,SAM,9,0.82,8.18
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Reg Beef Sub,70,,,1,9,8.18,9,0
+,CASH,1,,,,10,,,
+,CHANGE,9996,,,,1,,,
+12383879,16/05/2022 13:28:18,212,,,46,SAM,7.5,0.68,6.82
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Add Chips Promo,1308,,,1,2,1.82,2,0
+,Mini Lamb Sub,1220,,,1,5.5,5,5.5,0
+,EFTPOS,2,,,,7.5,,,
+12383881,16/05/2022 13:28:42,212,,,47,SAM,4.9,0.45,4.45
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,600ML Pepsi Max,277,,,1,4.9,4.45,4.9,0
+,EFTPOS,2,,,,4.9,,,
+12383885,16/05/2022 13:29:24,211,,,62,RENSCHE,5.2,0.47,4.73
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,300ML Orange Juice,291,,,1,5.2,4.73,5.2,0
+,CASH,1,,,,5.2,,,
+12383889,16/05/2022 13:30:27,211,,,63,RENSCHE,22.7,2.07,20.63
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Small Pork Meal,133,,,1,12.9,11.73,12.9,0
+,600ML Passiona,284,,,1,4.9,4.45,4.9,0
+,600ML Sunkist,279,,,1,4.9,4.45,4.9,0
+,EFTPOS,2,,,,22.7,,,
+12383907,16/05/2022 13:33:17,211,,,64,RENSCHE,25.7,2.33,23.37
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Sweet Potato Fry,906,,,1,9.5,8.64,9.5,0
+,Lamb & Mint Wrap,1207,,,1,11,10,11,0
+,300ML Orange Juice,291,,,1,5.2,4.73,5.2,0
+,CASH,1,,,,50,,,
+,CHANGE,9996,,,,24.3,,,
+12383922,16/05/2022 13:35:26,212,,,48,ROB,4.95,0.45,4.5
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Chips,11,,,1,4.95,4.5,5.5,0.55
+,DISCOUNT,0,,,,0.55,,,
+,EFTPOS,2,,,,4.95,,,
+12383931,16/05/2022 13:37:36,212,,,49,ROB,10.4,0.95,9.45
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Pork Crackling Cup,111,,,1,5.5,5,5.5,0
+,600ML Pepsi Max,277,,,1,4.9,4.45,4.9,0
+,EFTPOS,2,,,,10.4,,,
+12383935,16/05/2022 13:39:11,212,,,50,ROB,6.5,0.59,5.91
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,EFTPOS,2,,,,6.5,,,
+12383937,16/05/2022 13:39:51,212,,,51,RENSCHE,5.85,0.53,5.32
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Gems,16,,,1,4.95,4.5,5.5,0.55
+,Gravy PC,336,,,1,0.9,0.82,1,0.1
+,DISCOUNT,0,,,,0.65,,,
+,EFTPOS,2,,,,5.85,,,
+12383957,16/05/2022 13:44:43,211,,,65,RENSCHE,20.4,1.86,18.54
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Reg Beef Sub,70,,,1,9,8.18,9,0
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,600ML Mountain Dew,283,,,1,4.9,4.45,4.9,0
+,EFTPOS,2,,,,20.4,,,
+12383964,16/05/2022 13:46:18,211,,,66,ROB,27.9,2.53,25.37
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,HD Classic Burger,1259,,,1,10,9.09,10,0
+,Tomato Sauce,854,,,1,0,0,0,0
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,300ML Orange Juice,291,,,1,5.2,4.73,5.2,0
+,300ML Orange Juice,291,,,1,5.2,4.73,5.2,0
+,UBER EATS,15,,,,27.9,,,
+12383972,16/05/2022 13:48:18,212,,,52,RENSCHE,25.8,2.34,23.46
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Small Pork Meal,133,,,1,12.9,11.73,12.9,0
+,Small Beef Meal,124,,,1,12.9,11.73,12.9,0
+,EFTPOS,2,,,,25.8,,,
+12383980,16/05/2022 13:50:17,211,,,67,ROB,20,1.81,18.19
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,HD Pork Toastie,1249,,,1,9.5,8.64,9.5,0
+,HD Brisket Triple Cheese Toastie,1251,,,1,10.5,9.55,10.5,0
+,UBER EATS,15,,,,20,,,
+12383987,16/05/2022 13:52:56,212,,,53,ROB,5.5,0.5,5
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,EFTPOS,2,,,,5.5,,,
+12383988,16/05/2022 13:52:59,211,,,68,RENSCHE,15.9,1.45,14.45
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Lamb & Mint Wrap,1207,,,1,11,10,11,0
+,600ML Pepsi Max,277,,,1,4.9,4.45,4.9,0
+,EFTPOS,2,,,,15.9,,,
+12383990,16/05/2022 13:53:24,212,,,54,ROB,5.5,0.5,5
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,EFTPOS,2,,,,5.5,,,
+12383993,16/05/2022 13:54:05,211,,,69,ROB,7.5,0.68,6.82
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Kids Fish&Chip,647,,,1,7.5,6.82,7.5,0
+,CASH,1,,,,7.5,,,
+12384003,16/05/2022 13:56:23,211,,,70,ROB,13.7,1.24,12.46
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,Lipton Iced Tea Peach,1109,,,1,5.2,4.73,5.2,0
+,EFTPOS,2,,,,13.7,,,
+12384010,16/05/2022 13:57:50,211,,,71,ROB,12,1.09,10.91
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,450ml Pepsi,270,,,1,4.5,4.09,4.5,0
+,CASH,1,,,,12,,,
+12384022,16/05/2022 14:02:36,212,,,55,RENSCHE,30.2,2.74,27.46
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Beef Meal,125,,,1,15.9,14.45,15.9,0
+,Extra Meat 50g,964,,,1,3.9,3.55,3.9,0
+,Extra Meat 50g,964,,,1,3.9,3.55,3.9,0
+,Coffee Milkshake,253,,,1,6.5,5.91,6.5,0
+,CASH,1,,,,30.2,,,
+12384026,16/05/2022 14:04:11,211,,,72,SAM,10.5,0.95,9.55
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,Misc,370,,,1,2,1.82,2,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,EFTPOS,2,,,,10.5,,,
+12384027,16/05/2022 14:04:24,211,,,73,SAM,9,0.82,8.18
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Beef Sandwich,35,,,1,9,8.18,9,0
+,CASH,1,,,,10,,,
+,CHANGE,9996,,,,1,,,
+12384037,16/05/2022 14:07:52,212,,,56,ROB,20.4,1.86,18.54
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,Tomato Sauce PC,348,,,1,1.2,1.09,1.2,0
+,Apple Pop Top,326,,,1,3.6,3.27,3.6,0
+,Apple Pop Top,326,,,1,3.6,3.27,3.6,0
+,EFTPOS,2,,,,20.4,,,
+12384040,16/05/2022 14:08:35,211,,,74,RENSCHE,8.5,0.77,7.73
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,EFTPOS,2,,,,8.5,,,
+12384047,16/05/2022 14:10:45,212,,,57,RENSCHE,9.5,0.86,8.64
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,PF Pork Toastie,1128,,,1,9.5,8.64,9.5,0
+,EFTPOS,2,,,,9.5,,,
+12384066,16/05/2022 14:15:41,212,,,58,ROB,34.8,3.15,31.65
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Tropical Spud,178,,,1,11.7,10.64,11.7,0
+,Brisket Spud,926,,,1,12.7,11.55,12.7,0
+,Lipton Iced Tea Lemon,1111,,,1,5.2,4.73,5.2,0
+,300ML Orange Juice,291,,,1,5.2,4.73,5.2,0
+,EFTPOS,2,,,,34.8,,,
+12384070,16/05/2022 14:16:51,212,,,59,SAM,11.61,1.06,10.55
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Small Pork Meal,133,,,1,11.61,10.55,12.9,1.29
+,DISCOUNT,0,,,,1.29,,,
+,CASH,1,,,,20,,,
+,CHANGE,9996,,,,8.4,,,
+,CASH ROUNDING,8010,,,,-0.01,,,
+12384101,16/05/2022 14:26:25,211,,,75,RENSCHE,12.9,1.17,11.73
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Small Beef Meal,124,,,1,12.9,11.73,12.9,0
+,EFTPOS,2,,,,12.9,,,
+12384108,16/05/2022 14:29:39,211,,,76,RENSCHE,21.4,1.95,19.45
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Pork Meal,134,,,1,15.9,14.45,15.9,0
+,Pork Crackling Cup,111,,,1,5.5,5,5.5,0
+,EFTPOS,2,,,,21.4,,,
+12384111,16/05/2022 14:31:37,212,,,60,SAM,4.95,0.45,4.5
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Pork Crackling Cup,111,,,1,4.95,4.5,5.5,0.55
+,DISCOUNT,0,,,,0.55,,,
+,CASH,1,,,,4.95,,,
+12384121,16/05/2022 14:34:36,212,,,61,SAM,6.5,0.59,5.91
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,CASH,1,,,,6.5,,,
+12384122,16/05/2022 14:34:56,211,,,77,RENSCHE,23.5,2.14,21.36
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,600ML Sunkist,279,,,1,4.9,4.45,4.9,0
+,Apple Pop Top,326,,,1,3.6,3.27,3.6,0
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,PF Pork Toastie,1128,,,1,9.5,8.64,9.5,0
+,EFTPOS,2,,,,23.5,,,
+12384126,16/05/2022 14:36:21,212,,,62,SAM,50,4.56,45.44
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Steak Burger,755,,,1,12.5,11.36,12.5,0
+,+ Cheese,352,,,1,1.5,1.36,1.5,0
+,+ Egg,360,,,1,2,1.82,2,0
+,BBQ Sauce,852,,,1,0,0,0,0
+,Steak Burger,755,,,1,12.5,11.36,12.5,0
+,+ Cheese,352,,,1,1.5,1.36,1.5,0
+,+ Egg,360,,,1,2,1.82,2,0
+,BBQ Sauce,852,,,1,0,0,0,0
+,Large Chip Meal,501,,,1,4.1,3.73,4.1,0
+,600ML Solo,280,,,1,4.9,4.45,4.9,0
+,Large Chip Meal,501,,,1,4.1,3.73,4.1,0
+,600ML Pepsi,276,,,1,4.9,4.45,4.9,0
+,EFTPOS,2,,,,50,,,
+12384129,16/05/2022 14:37:13,211,,,78,RENSCHE,17,1.54,15.46
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Mini Beef Roll & Chip,847,,,1,7.5,6.82,7.5,0
+,Mini Beef Roll & Chip,847,,,1,7.5,6.82,7.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,EFTPOS,2,,,,17,,,
+12384137,16/05/2022 14:39:26,212,,,63,SAM,10.4,0.95,9.45
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,600ML Sunkist,279,,,1,4.9,4.45,4.9,0
+,CASH,1,,,,20,,,
+,CHANGE,9996,,,,9.6,,,
+12384140,16/05/2022 14:42:35,212,,,64,SAM,6.5,0.59,5.91
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,CASH,1,,,,20,,,
+,CHANGE,9996,,,,13.5,,,
+12384146,16/05/2022 14:47:10,212,,,65,SAM,22.4,2.03,20.37
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,Small Lamb Meal,130,,,1,13.9,12.64,13.9,0
+,EFTPOS,2,,,,22.4,,,
+12384169,16/05/2022 15:05:40,212,,,-1,SAM,0,0,0
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,NO SALES,99,,,,0,,,
+12384170,16/05/2022 15:05:42,211,,,-1,SAM,0,0,0
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,NO SALES,99,,,,0,,,
+12384173,16/05/2022 15:10:05,212,,,66,SAM,7.5,0.68,6.82
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,EFTPOS,2,,,,7.5,,,
+12384183,16/05/2022 15:18:04,212,,,67,SAM,7.5,0.68,6.82
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,EFTPOS,2,,,,7.5,,,
+12384185,16/05/2022 15:18:23,212,,,68,SAM,10.5,0.95,9.55
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,600ML Water,264,,,1,4,3.64,4,0
+,EFTPOS,2,,,,10.5,,,
+12384194,16/05/2022 15:23:14,212,,,69,SAM,29.5,2.69,26.81
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,HD Veggie Burger,1240,,,1,11.5,10.45,11.5,0
+,HD Cheese Slaw Spud,1253,,,1,9,8.18,9,0
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,HD Gravy,1230,,,1,1.5,1.36,1.5,0
+,UBER EATS,15,,,,29.5,,,
+12384198,16/05/2022 15:24:45,212,,,70,SAM,26.5,2.41,24.09
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,HD Pork Belly Burger,1238,,,1,12.5,11.36,12.5,0
+,Reg Onion Rings,599,,,1,6.5,5.91,6.5,0
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,UBER EATS,15,,,,26.5,,,
+12384201,16/05/2022 15:26:43,212,,,71,SAM,6.5,0.59,5.91
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,CASH,1,,,,6.5,,,
+12384228,16/05/2022 15:42:30,212,,,72,SAM,15.5,1.41,14.09
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Beef Sandwich,35,,,1,9,8.18,9,0
+,Regular Gems,16,,,1,5.5,5,5.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,EFTPOS,2,,,,15.5,,,
+12384230,16/05/2022 15:44:59,212,,,73,SAM,6.5,0.59,5.91
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,EFTPOS,2,,,,6.5,,,
+12384233,16/05/2022 15:47:14,212,,,74,SAM,6.5,0.59,5.91
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,EFTPOS,2,,,,6.5,,,
+12384235,16/05/2022 15:47:25,212,,,75,SAM,5.5,0.5,5
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Gems,16,,,1,5.5,5,5.5,0
+,CASH,1,,,,5.5,,,
+12384240,16/05/2022 15:50:16,212,,,76,SAM,9.5,0.86,8.64
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Brisket Topped Chips,815,,,1,9.5,8.64,9.5,0
+,EFTPOS,2,,,,9.5,,,
+12384245,16/05/2022 15:53:21,212,,,77,SAM,14,1.27,12.73
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,EFTPOS,2,,,,14,,,
+12384247,16/05/2022 15:56:21,212,,,78,SAM,11.61,1.06,10.55
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Small Beef Meal,124,,,1,11.61,10.55,12.9,1.29
+,DISCOUNT,0,,,,1.29,,,
+,EFTPOS,2,,,,11.61,,,
+12384248,16/05/2022 15:58:16,212,,,79,SAM,22.8,2.08,20.72
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Pork Meal,134,,,1,15.9,14.45,15.9,0
+,600ML Pepsi Max,277,,,1,4.9,4.45,4.9,0
+,Misc,370,,,1,2,1.82,2,0
+,EFTPOS,2,,,,22.8,,,
+12384257,16/05/2022 16:05:11,212,,,80,SAM,8.5,0.77,7.73
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Large Chips,12,,,1,7.5,6.82,7.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,CASH,1,,,,10,,,
+,CHANGE,9996,,,,1.5,,,
+12384258,16/05/2022 16:05:28,212,,,81,SAM,5.5,0.5,5
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,EFTPOS,2,,,,5.5,,,
+12384263,16/05/2022 16:09:23,212,,,82,SAM,6.5,0.59,5.91
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Chips,11,,,1,5.5,5,5.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,EFTPOS,2,,,,6.5,,,
+12384273,16/05/2022 16:25:43,212,,,83,SAM,6.5,0.59,5.91
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Regular Gems,16,,,1,5.5,5,5.5,0
+,Gravy PC,336,,,1,1,0.91,1,0
+,EFTPOS,2,,,,6.5,,,
+12384277,16/05/2022 16:29:38,212,,,84,SAM,11,1,10
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Lamb & Mint Wrap,1207,,,1,11,10,11,0
+,EFTPOS,2,,,,11,,,
+12384283,16/05/2022 16:36:38,212,,,85,SAM,12.9,1.17,11.73
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,Small Beef Meal,124,,,1,12.9,11.73,12.9,0
+,EFTPOS,2,,,,12.9,,,
+12384296,16/05/2022 17:15:08,212,,,-1,SAM,0,0,0
+,Description,PLU,,,Quantity,Sales Inc,Sales Ex,Original,Item Disc.
+,NO SALES,99,,,,0,,,
