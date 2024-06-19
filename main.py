@@ -112,11 +112,8 @@ for i, v in df.iterrows():
                 # If key doesn't exist, initialize with a list containing the value
                 add_ml_dict[key] = [value]
 
-ic(add_ml_dict)
-# COUNT ALL DRINKS SOLD PER DRINK
+# COUNT DRINKS SOLD PER CLERK PER TRANS ID
 drink_cnt = {}
-sauce_cnt = {}
-item_counter = Counter()
 
 for i in unique_drinks:
     for k, v in add_ml_dict.items():
@@ -126,17 +123,37 @@ for i in unique_drinks:
             drink_cnt[k + "_" + i] = len(v)
 
 ic(drink_cnt)
+final_drink_cnt = {}
 
 for k, v in drink_cnt.items():
-    ic(k)
     drink = k[9:]
     k = k[0:8]
     for t_id, clerk in clerk_add_dict.items():
         if k in str(t_id):
-            print(t_id, clerk, v, drink)
+            final_drink_cnt[t_id] = clerk + "_" + drink + ": " + str(v)
 
-# COUNT DRINKS SOLD PER TRANSACTION ID
+ic(final_drink_cnt)
+# COUNT SAUCES SOLD PER CLERK PER TRANS ID
+sauce_cnt = {}
 
+for i in unique_sauces:
+    for k, v in add_pc_dict.items():
+        k = round(k)
+        k = str(k)
+        if i in v:
+            sauce_cnt[k + "_" + i] = len(v)
+
+final_sauce_cnt = {}
+
+for k, v in sauce_cnt.items():
+    sauce = k[9:]
+    k = k[0:8]
+    for t_id, clerk in clerk_add_dict.items():
+        if k in str(t_id):
+            final_sauce_cnt[t_id] = clerk + "_" + sauce + ": " + str(v)
+
+
+ic(final_sauce_cnt)
 
 
 # drink_counts = Counter(drink_clerk_cnt.values())
