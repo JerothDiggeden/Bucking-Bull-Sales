@@ -222,23 +222,4 @@ ic(final_sauce_cnt)
 ic(f"Rensche Total Sales: {rensche_cnt}")
 ic(f"Rob Total Sales: {rob_cnt}")
 ic(f"Sam Total Sales: {sam_cnt}")
-
 ic(count_sales_time_total)
-
-
-
-# for v in assoc2["Transaction_Date"]:
-#         for d in add_pc_day:
-#             if d in v:
-#                 var = assoc2["Clerk"][d]
-
-# ic(pc)
-# ic(ml)
-
-
-# isolate_sale.set_index(["Description", "PLU", "Quantity", "Sales Inc Sales Ex", "Original Item Disc."], inplace=True)
-# ic(isolate_sale.columns)
-
-# ic(isolate_sale["Description"])
-#
-# ic(isolate_sale)
