@@ -72,7 +72,7 @@ for v in df["Clerk"]:
 employees = list(set(employees))
 ic(employees)
 
-# CREATE A DICTIONARY LINKING ALL TRANS ID'S TO A CLERK
+# CREATE A DICTIONARY LINKING ALL TRANS IDS TO A CLERK
 for i, v in df.iterrows():
     # Ensure 'Clerk' column value is a string before checking for substring membership
     if isinstance(v['Clerk'], (float, int)):
