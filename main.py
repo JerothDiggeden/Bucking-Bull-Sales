@@ -13,7 +13,7 @@ def contains_ml(cell):
     return 'ML' in str(cell)
 
 
-employees = ["RENSCHE", "ROB", "SAM"]
+# employees = ["RENSCHE", "ROB", "SAM"]
 df = pd.read_excel("data/Detailed_Sales_05_16_2022_CLEAN2.xls")
 times = df
 
@@ -63,7 +63,15 @@ add_pc_dict = {}
 add_ml_dict = {}
 clerk_add_dict = {}
 
-# time_cnt = list(times[(times['Transaction_Date'] > 1130) & (times['Transaction_Date'] < 2101)])
+# EMPLOYEE LIST
+employees = []
+for v in df["Clerk"]:
+    if isinstance(v, str) and v != "Sales_Inc":
+        employees.append(v)
+
+employees = list(set(employees))
+ic(employees)
+
 # CREATE A DICTIONARY LINKING ALL TRANS ID'S TO A CLERK
 for i, v in df.iterrows():
     # Ensure 'Clerk' column value is a string before checking for substring membership
@@ -215,11 +223,9 @@ rensche_cnt = len(rensche)
 rob_cnt = len(rob)
 sam_cnt = len(sam)
 
-ic(f"Total Sales per Clerk between 11:30 & 14:00: {count_sales_time_total}")
-ic(type(final_drink_cnt))
 ic(final_drink_cnt)
 ic(final_sauce_cnt)
 ic(f"Rensche Total Sales: {rensche_cnt}")
 ic(f"Rob Total Sales: {rob_cnt}")
 ic(f"Sam Total Sales: {sam_cnt}")
-ic(count_sales_time_total)
+ic(f"Total Sales per Clerk between 11:30 & 14:00: {count_sales_time_total}")
