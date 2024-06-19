@@ -126,11 +126,16 @@ for i in unique_drinks:
 final_drink_cnt = {}
 
 for k, v in drink_cnt.items():
-    drink = k[9:]
-    k = k[0:8]
+    drink = k[9:]  # Extract the drink part from the key
+    date_part = k[0:8]  # Extract the date part from the key
+
     for t_id, clerk in clerk_add_dict.items():
-        if k in str(t_id):
-            final_drink_cnt[t_id] = clerk + "_" + drink + ": " + str(v)
+        if date_part in str(t_id):
+            if t_id not in final_drink_cnt:
+                final_drink_cnt[t_id] = {}
+            if clerk not in final_drink_cnt[t_id]:
+                final_drink_cnt[t_id][clerk] = {}
+            final_drink_cnt[t_id][clerk][drink] = v
 
 # COUNT SAUCES SOLD PER CLERK PER TRANS ID
 sauce_cnt = {}
@@ -145,11 +150,16 @@ for i in unique_sauces:
 final_sauce_cnt = {}
 
 for k, v in sauce_cnt.items():
-    sauce = k[9:]
-    k = k[0:8]
+    sauce = k[9:]  # Extract the drink part from the key
+    date_part = k[0:8]  # Extract the date part from the key
+
     for t_id, clerk in clerk_add_dict.items():
-        if k in str(t_id):
-            final_sauce_cnt[t_id] = clerk + "_" + sauce + ": " + str(v)
+        if date_part in str(t_id):
+            if t_id not in final_sauce_cnt:
+                final_sauce_cnt[t_id] = {}
+            if clerk not in final_sauce_cnt[t_id]:
+                final_sauce_cnt[t_id][clerk] = {}
+            final_sauce_cnt[t_id][clerk][sauce] = v
 
 times['Transaction_Date'] = times['Transaction_Date'].str[9:-2]
 
@@ -205,11 +215,10 @@ rensche_cnt = len(rensche)
 rob_cnt = len(rob)
 sam_cnt = len(sam)
 
-final_sauce_cnt = sorted(final_sauce_cnt.items())
-final_drink_cnt = sorted(final_drink_cnt.items())
 ic(f"Total Sales per Clerk between 11:30 & 14:00: {count_sales_time_total}")
-ic(final_sauce_cnt)
+ic(type(final_drink_cnt))
 ic(final_drink_cnt)
+ic(final_sauce_cnt)
 ic(f"Rensche Total Sales: {rensche_cnt}")
 ic(f"Rob Total Sales: {rob_cnt}")
 ic(f"Sam Total Sales: {sam_cnt}")
