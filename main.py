@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import customtkinter as ctk
 from icecream import ic
+from collections import Counter
 
 
 def contains_pc(cell):
@@ -90,6 +91,7 @@ ic(add_ml_dict)
 ic(clerk_add_dict)
 
 drink_clerk_cnt = {}
+sauce_clerk_cnt = {}
 
 for k, c in clerk_add_dict.items():
     for id, d in add_ml_dict.items():
@@ -98,7 +100,22 @@ for k, c in clerk_add_dict.items():
             value = c
             drink_clerk_cnt[key] = value
 
+for k, c in clerk_add_dict.items():
+    for id, d in add_pc_dict.items():
+        if k == id:
+            key = k
+            value = c
+            sauce_clerk_cnt[key] = value
+
 ic(drink_clerk_cnt)
+ic(sauce_clerk_cnt)
+
+drink_counts = Counter(drink_clerk_cnt.values())
+sauce_counts = Counter(sauce_clerk_cnt.values())
+
+
+ic(sauce_counts)
+ic(drink_counts)
 # add_pc_dict = {key: value for key, value in zip(df['Transaction_ID'], df['Clerk'])}
 #
 # add_ml_dict = {}
