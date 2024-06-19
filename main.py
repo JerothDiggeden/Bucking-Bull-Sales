@@ -89,6 +89,16 @@ ic(add_pc_dict)
 ic(add_ml_dict)
 ic(clerk_add_dict)
 
+drink_clerk_cnt = {}
+
+for k, c in clerk_add_dict.items():
+    for id, d in add_ml_dict.items():
+        if k == id:
+            key = k
+            value = c
+            drink_clerk_cnt[key] = value
+
+ic(drink_clerk_cnt)
 # add_pc_dict = {key: value for key, value in zip(df['Transaction_ID'], df['Clerk'])}
 #
 # add_ml_dict = {}
