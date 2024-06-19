@@ -12,9 +12,17 @@ def contains_pc(cell):
 def contains_ml(cell):
     return 'ML' in str(cell)
 
+pd.set_option('display.max_columns', None)
+df = pd.read_excel("data/DetailedAudit_ORIG.xls")
+df.replace({'/': '', ':': '', "  ": "_", " ": "_"})
+df.drop(columns=['Unnamed: 0', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 6', 'Unnamed: 7'], inplace=True)
+df.drop(index=[0, 1, 2, 3, 4, 5])
+column_names = ["Transaction_ID", "Transaction_Date", "Terminal_ID", "Receipt_Number",
+                "Clerk", "Sales_Total", "Tax", "Sales_Ex_Tax"]
+df.columns = column_names
 
-df = pd.read_excel("data/DetailedAudit.xls")
 times = df
+ic(df)
 
 for col in df.columns:
     df[col] = df[col].ffill()
@@ -204,7 +212,5 @@ for i, v in times_dict.items():
 
 ic(final_drink_cnt)
 ic(final_sauce_cnt)
-ic(f"Rensche Total Sales: {rensche_cnt}")
-ic(f"Rob Total Sales: {rob_cnt}")
-ic(f"Sam Total Sales: {sam_cnt}")
+ic(employees_tot_sales)
 ic(f"Total Sales per Clerk between 11:30 & 14:00: {count_sales_time_total}")
