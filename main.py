@@ -72,6 +72,7 @@ for i, v in df.iterrows():
         for emp in employees:
             if emp in v['Clerk']:
                 key = v['Transaction_ID']
+                key = round(key)
                 value = v['Clerk']
                 clerk_add_dict[key] = value
 
@@ -111,18 +112,30 @@ for i, v in df.iterrows():
                 # If key doesn't exist, initialize with a list containing the value
                 add_ml_dict[key] = [value]
 
+ic(add_ml_dict)
 # COUNT ALL DRINKS SOLD PER DRINK
-drink_clerk_cnt = {}
-sauce_clerk_cnt = {}
+drink_cnt = {}
+sauce_cnt = {}
 item_counter = Counter()
 
-for key, item_list in add_ml_dict.items():
-    # Update Counter with items from the list
-    item_counter.update(item_list)
+for i in unique_drinks:
+    for k, v in add_ml_dict.items():
+        k = round(k)
+        k = str(k)
+        if i in v:
+            drink_cnt[k + "_" + i] = len(v)
+
+ic(drink_cnt)
+
+for k, v in drink_cnt.items():
+    ic(k)
+    drink = k[9:]
+    k = k[0:8]
+    for t_id, clerk in clerk_add_dict.items():
+        if k in str(t_id):
+            print(t_id, clerk, v, drink)
 
 # COUNT DRINKS SOLD PER TRANSACTION ID
-
-ic(item_counter)
 
 
 
