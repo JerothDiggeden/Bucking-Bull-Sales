@@ -15,12 +15,14 @@ def contains_ml(cell):
 
 employees = ["RENSCHE", "ROB", "SAM"]
 df = pd.read_excel("data/Detailed_Sales_05_16_2022_CLEAN2.xls")
+times = df
 
 for col in df.columns:
     df[col] = df[col].ffill()
 
 all_trans_id = list(df["Transaction_ID"])
 unique_id = list(df["Transaction_ID"].unique())
+
 unique_drinks = []
 unique_sauces = []
 
@@ -34,9 +36,6 @@ for v in df["Transaction_Date"]:
 
 unique_drinks = list(set(unique_drinks))
 unique_sauces = list(set(unique_sauces))
-
-ic(unique_drinks)
-ic(unique_sauces)
 
 for i, v in enumerate(unique_id):
     unique_id[i] = int(v)
@@ -53,6 +52,7 @@ assoc2 = df[df["Transaction_ID"] == 12382776.0][["Transaction_ID", "Transaction_
 
 mask_pc = df.map(contains_pc)
 mask_ml = df.map(contains_ml)
+
 pc = df[mask_pc]
 ml = df[mask_ml]
 
@@ -63,6 +63,7 @@ add_pc_dict = {}
 add_ml_dict = {}
 clerk_add_dict = {}
 
+# time_cnt = list(times[(times['Transaction_Date'] > 1130) & (times['Transaction_Date'] < 2101)])
 # CREATE A DICTIONARY LINKING ALL TRANS ID'S TO A CLERK
 for i, v in df.iterrows():
     # Ensure 'Clerk' column value is a string before checking for substring membership
@@ -122,7 +123,6 @@ for i in unique_drinks:
         if i in v:
             drink_cnt[k + "_" + i] = len(v)
 
-ic(drink_cnt)
 final_drink_cnt = {}
 
 for k, v in drink_cnt.items():
@@ -132,7 +132,6 @@ for k, v in drink_cnt.items():
         if k in str(t_id):
             final_drink_cnt[t_id] = clerk + "_" + drink + ": " + str(v)
 
-ic(final_drink_cnt)
 # COUNT SAUCES SOLD PER CLERK PER TRANS ID
 sauce_cnt = {}
 
@@ -152,8 +151,35 @@ for k, v in sauce_cnt.items():
         if k in str(t_id):
             final_sauce_cnt[t_id] = clerk + "_" + sauce + ": " + str(v)
 
+times['Transaction_Date'] = times['Transaction_Date'].str[9:-2]
 
-ic(final_sauce_cnt)
+times_dict = {}
+
+for i, row in times.iterrows():
+    transaction_id = row["Transaction_ID"]
+    transaction_id = round(transaction_id)
+    transaction_date = row["Transaction_Date"]
+
+    # Check if transaction_date can be converted to an integer
+    try:
+        transaction_date = int(transaction_date)
+    except ValueError:
+        continue  # Skip this row if transaction_date is not numeric
+
+    # Check if transaction_date falls within the specified range
+    if 1129 < transaction_date < 1401:
+        times_dict[transaction_id] = transaction_date
+
+count_sales_time = []
+
+for i, v in times_dict.items():
+    for id, clerk in clerk_add_dict.items():
+        if id == i:
+            v = str(v)
+            count_sales_time.append(clerk)
+            count_sales_time_total = Counter(count_sales_time)
+
+ic(count_sales_time_total)
 
 
 # drink_counts = Counter(drink_clerk_cnt.values())
