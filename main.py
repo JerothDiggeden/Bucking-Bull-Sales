@@ -13,8 +13,7 @@ def contains_ml(cell):
     return 'ML' in str(cell)
 
 
-# employees = ["RENSCHE", "ROB", "SAM"]
-df = pd.read_excel("data/Detailed_Sales_05_16_2022_CLEAN2.xls")
+df = pd.read_excel("data/DetailedAudit.xls")
 times = df
 
 for col in df.columns:
@@ -64,13 +63,15 @@ add_ml_dict = {}
 clerk_add_dict = {}
 
 # EMPLOYEE LIST
-employees = []
+employees_cnt = []
 for v in df["Clerk"]:
     if isinstance(v, str) and v != "Sales_Inc":
-        employees.append(v)
+        employees_cnt.append(v)
 
-employees = list(set(employees))
-ic(employees)
+employees_tot_sales = Counter(employees_cnt)
+employees_tot_sales = dict(employees_tot_sales)
+
+employees = list(set(employees_cnt))
 
 # CREATE A DICTIONARY LINKING ALL TRANS IDS TO A CLERK
 for i, v in df.iterrows():
@@ -198,30 +199,8 @@ for i, v in times_dict.items():
             count_sales_time_total = Counter(count_sales_time)
             count_sales_time_total = dict(count_sales_time_total)
 
-# How many transaction s per Clerk per day. Count how many accurances of "Name" in "Clerk" Column
-employees = ["RENSCHE", "ROB", "SAM"]
-clerk_lst = list(df["Clerk"])
-clerk = []
-rensche = []
-sam = []
-rob = []
+# How many transactions per Clerk per day
 
-
-for v in clerk_lst:
-    if v in employees:
-        clerk.append(v)
-
-for c in clerk:
-    if c == "RENSCHE":
-        rensche.append(c)
-    if c == "ROB":
-        rob.append(c)
-    if c == "SAM":
-        sam.append(c)
-
-rensche_cnt = len(rensche)
-rob_cnt = len(rob)
-sam_cnt = len(sam)
 
 ic(final_drink_cnt)
 ic(final_sauce_cnt)
