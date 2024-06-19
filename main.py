@@ -214,6 +214,8 @@ ic(f"Rensche Total Sales: {rensche_cnt}")
 ic(f"Rob Total Sales: {rob_cnt}")
 ic(f"Sam Total Sales: {sam_cnt}")
 
+ic(count_sales_time_total)
+
 
 
 # for v in assoc2["Transaction_Date"]:
