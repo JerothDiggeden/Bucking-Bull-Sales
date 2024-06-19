@@ -14,7 +14,7 @@ def contains_ml(cell):
 
 pd.set_option('display.max_columns', None)
 df = pd.read_excel("data/DetailedAudit_ORIG.xls")
-df.replace({'/': '', ':': '', "  ": "_", " ": "_"})
+df.replace({'\n': "", "/": "", ":": "", "  ": "_", " ": "_"})
 df.drop(columns=['Unnamed: 0', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 6', 'Unnamed: 7'], inplace=True)
 df.drop(index=[0, 1, 2, 3, 4, 5])
 column_names = ["Transaction_ID", "Transaction_Date", "Terminal_ID", "Receipt_Number",
