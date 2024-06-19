@@ -8,24 +8,35 @@ from collections import Counter
 def contains_pc(cell):
     return 'PC' in str(cell)
 
+
 def contains_ml(cell):
     return 'ML' in str(cell)
 
 
 employees = ["RENSCHE", "ROB", "SAM"]
-
 df = pd.read_excel("data/Detailed_Sales_05_16_2022_CLEAN2.xls")
 
 for col in df.columns:
     df[col] = df[col].ffill()
 
-pd.set_option('display.max_rows', None)
-pd.set_option('display.max_columns', None)
-
-ic(df)
-
 all_trans_id = list(df["Transaction_ID"])
 unique_id = list(df["Transaction_ID"].unique())
+unique_drinks = []
+unique_sauces = []
+
+for v in df["Transaction_Date"]:
+    if "ML" in str(v):
+        unique_drinks.append(v)
+
+for v in df["Transaction_Date"]:
+    if "PC" in str(v):
+        unique_sauces.append(v)
+
+unique_drinks = list(set(unique_drinks))
+unique_sauces = list(set(unique_sauces))
+
+ic(unique_drinks)
+ic(unique_sauces)
 
 for i, v in enumerate(unique_id):
     unique_id[i] = int(v)
@@ -33,21 +44,12 @@ for i, v in enumerate(unique_id):
 for i, v in enumerate(all_trans_id):
     all_trans_id[i] = int(v)
 
-ic(all_trans_id)
-ic(unique_id)
-
 trans_date = list(df["Transaction_Date"])
 clerk = list(df["Clerk"])
 
-dict = {}
-
 assoc = df[(df["Transaction_ID"] == 12382776.0) & (df["Clerk"] == "RENSCHE")][["Transaction_Date", "Clerk"]]
 
-ic(assoc)
-
 assoc2 = df[df["Transaction_ID"] == 12382776.0][["Transaction_ID", "Transaction_Date", "Clerk"]]
-
-ic(assoc2)
 
 mask_pc = df.map(contains_pc)
 mask_ml = df.map(contains_ml)
@@ -61,20 +63,7 @@ add_pc_dict = {}
 add_ml_dict = {}
 clerk_add_dict = {}
 
-for i, v in df.iterrows():
-    for pc in add_pc_day:
-        if pc in v['Transaction_Date']:
-            key = v['Transaction_ID']
-            value = v['Transaction_Date']
-            add_pc_dict[key] = value
-
-for i, v in df.iterrows():
-    for ml in add_ml_day:
-        if ml in v['Transaction_Date']:
-            key = v['Transaction_ID']
-            value = v['Transaction_Date']
-            add_ml_dict[key] = value
-
+# CREATE A DICTIONARY LINKING ALL TRANS ID'S TO A CLERK
 for i, v in df.iterrows():
     # Ensure 'Clerk' column value is a string before checking for substring membership
     if isinstance(v['Clerk'], (float, int)):
@@ -86,36 +75,63 @@ for i, v in df.iterrows():
                 value = v['Clerk']
                 clerk_add_dict[key] = value
 
-ic(add_pc_dict)
-ic(add_ml_dict)
-ic(clerk_add_dict)
+# CREATE DICT OF ALL OCCURANCES OF SAUCES SOLD PER TRANS ID
+for i, v in df.iterrows():
+    for pc in add_pc_day:
+        if pc in v['Transaction_Date']:
+            key = v['Transaction_ID']
+            value = v['Transaction_Date']
 
+            # Check if key already exists in add_ml_dict
+            if key in add_pc_dict:
+                # Ensure the value is stored as a list
+                if not isinstance(add_pc_dict[key], list):
+                    add_pc_dict[key] = [add_pc_dict[key]]
+                # Append the new value
+                add_pc_dict[key].append(value)
+            else:
+                # If key doesn't exist, initialize with a list containing the value
+                add_pc_dict[key] = [value]
+
+# CREATE DICT OF ALL OCCURANCES OF DRINKS SOLD PER TRANS ID
+for i, v in df.iterrows():
+    for ml in add_ml_day:
+        if ml in v['Transaction_Date']:
+            key = v['Transaction_ID']
+            value = v['Transaction_Date']
+
+            # Check if key already exists in add_ml_dict
+            if key in add_ml_dict:
+                # Ensure the value is stored as a list
+                if not isinstance(add_ml_dict[key], list):
+                    add_ml_dict[key] = [add_ml_dict[key]]
+                # Append the new value
+                add_ml_dict[key].append(value)
+            else:
+                # If key doesn't exist, initialize with a list containing the value
+                add_ml_dict[key] = [value]
+
+# COUNT ALL DRINKS SOLD PER DRINK
 drink_clerk_cnt = {}
 sauce_clerk_cnt = {}
+item_counter = Counter()
 
-for k, c in clerk_add_dict.items():
-    for id, d in add_ml_dict.items():
-        if k == id:
-            key = k
-            value = c
-            drink_clerk_cnt[key] = value
+for key, item_list in add_ml_dict.items():
+    # Update Counter with items from the list
+    item_counter.update(item_list)
 
-for k, c in clerk_add_dict.items():
-    for id, d in add_pc_dict.items():
-        if k == id:
-            key = k
-            value = c
-            sauce_clerk_cnt[key] = value
+# COUNT DRINKS SOLD PER TRANSACTION ID
 
-ic(drink_clerk_cnt)
-ic(sauce_clerk_cnt)
-
-drink_counts = Counter(drink_clerk_cnt.values())
-sauce_counts = Counter(sauce_clerk_cnt.values())
+ic(item_counter)
 
 
-ic(sauce_counts)
-ic(drink_counts)
+
+# drink_counts = Counter(drink_clerk_cnt.values())
+# sauce_counts = Counter(sauce_clerk_cnt.values())
+
+
+# ic(sauce_counts)
+# ic(drink_counts)
 # add_pc_dict = {key: value for key, value in zip(df['Transaction_ID'], df['Clerk'])}
 #
 # add_ml_dict = {}
