@@ -15,12 +15,14 @@ def contains_ml(cell):
 
 employees = ["RENSCHE", "ROB", "SAM"]
 df = pd.read_excel("data/Detailed_Sales_05_16_2022_CLEAN2.xls")
+times = df
 
 for col in df.columns:
     df[col] = df[col].ffill()
 
 all_trans_id = list(df["Transaction_ID"])
 unique_id = list(df["Transaction_ID"].unique())
+
 unique_drinks = []
 unique_sauces = []
 
@@ -34,9 +36,6 @@ for v in df["Transaction_Date"]:
 
 unique_drinks = list(set(unique_drinks))
 unique_sauces = list(set(unique_sauces))
-
-ic(unique_drinks)
-ic(unique_sauces)
 
 for i, v in enumerate(unique_id):
     unique_id[i] = int(v)
@@ -53,6 +52,7 @@ assoc2 = df[df["Transaction_ID"] == 12382776.0][["Transaction_ID", "Transaction_
 
 mask_pc = df.map(contains_pc)
 mask_ml = df.map(contains_ml)
+
 pc = df[mask_pc]
 ml = df[mask_ml]
 
@@ -63,6 +63,7 @@ add_pc_dict = {}
 add_ml_dict = {}
 clerk_add_dict = {}
 
+# time_cnt = list(times[(times['Transaction_Date'] > 1130) & (times['Transaction_Date'] < 2101)])
 # CREATE A DICTIONARY LINKING ALL TRANS ID'S TO A CLERK
 for i, v in df.iterrows():
     # Ensure 'Clerk' column value is a string before checking for substring membership
@@ -122,7 +123,6 @@ for i in unique_drinks:
         if i in v:
             drink_cnt[k + "_" + i] = len(v)
 
-ic(drink_cnt)
 final_drink_cnt = {}
 
 for k, v in drink_cnt.items():
@@ -132,7 +132,6 @@ for k, v in drink_cnt.items():
         if k in str(t_id):
             final_drink_cnt[t_id] = clerk + "_" + drink + ": " + str(v)
 
-ic(final_drink_cnt)
 # COUNT SAUCES SOLD PER CLERK PER TRANS ID
 sauce_cnt = {}
 
@@ -152,21 +151,71 @@ for k, v in sauce_cnt.items():
         if k in str(t_id):
             final_sauce_cnt[t_id] = clerk + "_" + sauce + ": " + str(v)
 
+times['Transaction_Date'] = times['Transaction_Date'].str[9:-2]
 
+times_dict = {}
+
+for i, row in times.iterrows():
+    transaction_id = row["Transaction_ID"]
+    transaction_id = round(transaction_id)
+    transaction_date = row["Transaction_Date"]
+
+    # Check if transaction_date can be converted to an integer
+    try:
+        transaction_date = int(transaction_date)
+    except ValueError:
+        continue  # Skip this row if transaction_date is not numeric
+
+    # Check if transaction_date falls within the specified range
+    if 1129 < transaction_date < 1401:
+        times_dict[transaction_id] = transaction_date
+
+count_sales_time = []
+
+for i, v in times_dict.items():
+    for id, clerk in clerk_add_dict.items():
+        if id == i:
+            v = str(v)
+            count_sales_time.append(clerk)
+            count_sales_time_total = Counter(count_sales_time)
+            count_sales_time_total = dict(count_sales_time_total)
+
+# How many transaction s per Clerk per day. Count how many accurances of "Name" in "Clerk" Column
+employees = ["RENSCHE", "ROB", "SAM"]
+clerk_lst = list(df["Clerk"])
+clerk = []
+rensche = []
+sam = []
+rob = []
+
+
+for v in clerk_lst:
+    if v in employees:
+        clerk.append(v)
+
+for c in clerk:
+    if c == "RENSCHE":
+        rensche.append(c)
+    if c == "ROB":
+        rob.append(c)
+    if c == "SAM":
+        sam.append(c)
+
+rensche_cnt = len(rensche)
+rob_cnt = len(rob)
+sam_cnt = len(sam)
+
+final_sauce_cnt = sorted(final_sauce_cnt.items())
+final_drink_cnt = sorted(final_drink_cnt.items())
+ic(f"Total Sales per Clerk between 11:30 & 14:00: {count_sales_time_total}")
 ic(final_sauce_cnt)
+ic(final_drink_cnt)
+ic(f"Rensche Total Sales: {rensche_cnt}")
+ic(f"Rob Total Sales: {rob_cnt}")
+ic(f"Sam Total Sales: {sam_cnt}")
 
 
-# drink_counts = Counter(drink_clerk_cnt.values())
-# sauce_counts = Counter(sauce_clerk_cnt.values())
 
-
-# ic(sauce_counts)
-# ic(drink_counts)
-# add_pc_dict = {key: value for key, value in zip(df['Transaction_ID'], df['Clerk'])}
-#
-# add_ml_dict = {}
-#
-#
 # for v in assoc2["Transaction_Date"]:
 #         for d in add_pc_day:
 #             if d in v:
@@ -182,39 +231,3 @@ ic(final_sauce_cnt)
 # ic(isolate_sale["Description"])
 #
 # ic(isolate_sale)
-
-# # How many transaction s per Clerk per day. Count how many accurances of "Name" in "Clerk" Column
-# drinks = ['Pepsi', 'Pepsi Max', 'Sunkist', 'Lemonade', 'Solo', 'Pepsi Large',
-#                   'Pepsi Max Large', 'Sunkist Large', 'Lemonade Large', 'Solo Large', 'Water',
-#                   'Natural', 'Orange', 'Apple', 'Apple Black', 'Mango Orange',
-#                   'Lemon Lipton Iced Tea', 'Peach Lipton Iced Tea', 'Mango Lipton Iced Tea',
-#                   'Rasberry Lipton Iced Tea', 'Lemon Lime', 'Grape', 'Orange PT', 'Apple PT',
-#                   'Apple Black PT', 'Wild Berry PT']
-# employees = ["RENSCHE", "ROB", "SAM"]
-# clerk_lst = list(df["Clerk"])
-# clerk = []
-# rensche = []
-# sam = []
-# rob = []
-# ic(clerk_lst)
-#
-#
-# for v in clerk_lst:
-#     if v in employees:
-#         clerk.append(v)
-#
-# for c in clerk:
-#     if c == "RENSCHE":
-#         rensche.append(c)
-#     if c == "ROB":
-#         rob.append(c)
-#     if c == "SAM":
-#         sam.append(c)
-#
-# rensche_cnt = len(rensche)
-# rob_cnt = len(rob)
-# sam_cnt = len(sam)
-#
-# ic(rensche_cnt)
-# ic(rob_cnt)
-# ic(sam_cnt)
