@@ -3,7 +3,6 @@ import numpy as np
 import customtkinter as ctk
 from icecream import ic
 from collections import Counter
-import math
 
 
 def contains_pc(cell):
@@ -14,17 +13,8 @@ def contains_ml(cell):
     return 'ML' in str(cell)
 
 pd.set_option('display.max_columns', None)
-
 df = pd.read_excel("data/DetailedAudit_ORIG.xls")
-
-replacement_mapping = {
-    "/": "",
-    ":": "",
-    "  ": "_",  # Replace double spaces with underscore
-    " ": "_"   # Replace single spaces with underscore
-}
-
-df.replace(replacement_mapping, regex=True)
+df.replace({'\n': "", "/": "", ":": "", "  ": "_", " ": "_"})
 df.drop(columns=['Unnamed: 0', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 6', 'Unnamed: 7'], inplace=True)
 df.drop(index=[0, 1, 2, 3, 4, 5])
 column_names = ["Transaction_ID", "Transaction_Date", "Terminal_ID", "Receipt_Number",
@@ -32,17 +22,14 @@ column_names = ["Transaction_ID", "Transaction_Date", "Terminal_ID", "Receipt_Nu
 df.columns = column_names
 
 times = df
-
 ic(df)
 
 for col in df.columns:
     df[col] = df[col].ffill()
 
-all_trans_id = list(df["Transaction_ID"].dropna())
-all_trans_id.remove("Transaction\n ID")
-unique_id = list(df["Transaction_ID"].dropna().unique())
-unique_id.remove("Transaction\n ID")
-ic(unique_id)
+all_trans_id = list(df["Transaction_ID"])
+unique_id = list(df["Transaction_ID"].unique())
+
 unique_drinks = []
 unique_sauces = []
 
@@ -58,12 +45,10 @@ unique_drinks = list(set(unique_drinks))
 unique_sauces = list(set(unique_sauces))
 
 for i, v in enumerate(unique_id):
-    if pd.notna(v):  # Check if v is not NaN
-        unique_id[i] = int(v)
+    unique_id[i] = int(v)
 
 for i, v in enumerate(all_trans_id):
-    if pd.notna(v):  # Check if v is not NaN
-        all_trans_id[i] = int(v)
+    all_trans_id[i] = int(v)
 
 trans_date = list(df["Transaction_Date"])
 clerk = list(df["Clerk"])
@@ -95,7 +80,6 @@ employees_tot_sales = Counter(employees_cnt)
 employees_tot_sales = dict(employees_tot_sales)
 
 employees = list(set(employees_cnt))
-ic(employees)
 
 # CREATE A DICTIONARY LINKING ALL TRANS IDS TO A CLERK
 for i, v in df.iterrows():
@@ -105,7 +89,7 @@ for i, v in df.iterrows():
     else:
         for emp in employees:
             if emp in v['Clerk']:
-                key = float(v['Transaction_ID'])
+                key = v['Transaction_ID']
                 key = round(key)
                 value = v['Clerk']
                 clerk_add_dict[key] = value
@@ -225,7 +209,7 @@ for i, v in times_dict.items():
 
 # How many transactions per Clerk per day
 
-ic(df)
+
 ic(final_drink_cnt)
 ic(final_sauce_cnt)
 ic(employees_tot_sales)
