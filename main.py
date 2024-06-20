@@ -13,13 +13,17 @@ def contains_ml(cell):
     return 'ML' in str(cell)
 
 pd.set_option('display.max_columns', None)
+pd.set_option('display.max_rows', 1223)
 df = pd.read_excel("data/DetailedAudit_ORIG.xls")
 df.replace({'\n': "", "/": "", ":": "", "  ": "_", " ": "_"})
 df.drop(columns=['Unnamed: 0', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 6', 'Unnamed: 7'], inplace=True)
-df.drop(index=[0, 1, 2, 3, 4, 5])
+df.drop([0, 1, 2, 3, 4, 5, 6], axis=0, inplace=True)
+df = df.reset_index(drop=True)
 column_names = ["Transaction_ID", "Transaction_Date", "Terminal_ID", "Receipt_Number",
                 "Clerk", "Sales_Total", "Tax", "Sales_Ex_Tax"]
 df.columns = column_names
+file_path = 'data/output_data.xlsx'
+df.to_excel(file_path, index=False)
 
 times = df
 ic(df)
@@ -27,8 +31,11 @@ ic(df)
 for col in df.columns:
     df[col] = df[col].ffill()
 
-all_trans_id = list(df["Transaction_ID"])
-unique_id = list(df["Transaction_ID"].unique())
+all_trans_id = list(round(df["Transaction_ID"].dropna()))
+unique_id = list(df["Transaction_ID"].dropna().unique())
+
+ic(all_trans_id)
+ic(unique_id)
 
 unique_drinks = []
 unique_sauces = []
