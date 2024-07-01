@@ -15,8 +15,19 @@ def contains_ml(cell):
 
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', 1223)
-df = pd.read_excel("data/DetailedAudit_ORIG.xls")
-df.replace({'\n': "", "/": "", ":": "", "  ": "_", " ": "_"})
+df = pd.read_excel("data/DetailedAudit.xls")
+
+replacements = {'\n': "", "/": "", ":": "", "  ": "_", " ": "_", "_": " "}
+
+# Function to apply replacements
+def replace_symbols(text, replacements):
+    for old, new in replacements.items():
+        text = text.replace(old, new)
+    return text
+
+# Apply replacements to the entire DataFrame
+df = df.applymap(lambda x: replace_symbols(str(x), replacements))
+
 df.drop(columns=['Unnamed: 0', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 6', 'Unnamed: 7'], inplace=True)
 df.drop([0, 1, 2, 3, 4, 5, 6], axis=0, inplace=True)
 df = df.reset_index(drop=True)
@@ -27,13 +38,20 @@ file_path = 'data/output_data.xlsx'
 df.to_excel(file_path, index=False)
 
 times = df
-# ic(df)
 
 for col in df.columns:
     df[col] = df[col].ffill()
 
 all_trans_id = list(round(df["Transaction_ID"].dropna()))
 unique_id = list(df["Transaction_ID"].dropna().unique())
+
+all_trans_id = [v for v in all_trans_id if str(v) != 'nan']
+all_trans_id = [int(v) for v in all_trans_id]
+unique_id = [v for v in unique_id if str(v) != 'nan']
+unique_id = [int(v) for v in unique_id]
+
+ic(all_trans_id)
+ic(unique_id)
 
 unique_drinks = []
 unique_sauces = []
@@ -49,11 +67,19 @@ for v in df["Transaction_Date"]:
 unique_drinks = list(set(unique_drinks))
 unique_sauces = list(set(unique_sauces))
 
-for i, v in enumerate(unique_id):
-    unique_id[i] = int(v)
-
-for i, v in enumerate(all_trans_id):
-    all_trans_id[i] = int(v)
+# for i, v in enumerate(unique_id):
+#     if isinstance(v, float) and math.isnan(v):
+#         continue  # Skip NaN values
+#
+#     # Check if v is numeric and convert to integer
+#     if isinstance(v, (int, float)):
+#         try:
+#             unique_id[i] = int(v)
+#         except ValueError:
+#             pass  # Handle if v is not convertible to int
+#
+# for i, v in enumerate(all_trans_id):
+#     all_trans_id[i] = int(v)
 
 trans_date = list(df["Transaction_Date"])
 clerk = list(df["Clerk"])
@@ -78,6 +104,7 @@ clerk_add_dict = {}
 # EMPLOYEE LIST
 employees_cnt = []
 for v in df["Clerk"]:
+
     if isinstance(v, str) and v != "Sales Inc":
         employees_cnt.append(v)
 
@@ -99,11 +126,11 @@ for i, v in df.iterrows():
                 if isinstance(key, float) and math.isnan(key):
                     continue
                 if key != "NaN":
-                    key = round(key)
+                    # key = round(key)
                     value = v['Clerk']
                     clerk_add_dict[key] = value
 
-ic(clerk_add_dict)
+# ic(clerk_add_dict)
 
 # CREATE DICT OF ALL OCCURANCES OF SAUCES SOLD PER TRANS ID
 for i, v in df.iterrows():
@@ -149,7 +176,7 @@ for i in unique_drinks:
         if isinstance(k, float) and math.isnan(k):
             continue
         if k != "NaN":
-            k = round(k)
+            # k = round(k)
             k = str(k)
             if i in v:
                 drink_cnt[k + "_" + i] = len(v)
@@ -173,7 +200,7 @@ sauce_cnt = {}
 
 for i in unique_sauces:
     for k, v in add_pc_dict.items():
-        k = round(k)
+        # k = round(k)
         k = str(k)
         if i in v:
             sauce_cnt[k + "_" + i] = len(v)
@@ -192,7 +219,8 @@ for k, v in sauce_cnt.items():
                 final_sauce_cnt[t_id][clerk] = {}
             final_sauce_cnt[t_id][clerk][sauce] = v
 
-times['Transaction_Date'] = times['Transaction_Date'].str[9:-2]
+times['Transaction_Date'] = times['Transaction_Date'].str[10:-2]
+ic(times)
 
 times_dict = {}
 
@@ -208,10 +236,11 @@ for i, row in times.iterrows():
         continue  # Skip this row if transaction_date is not numeric
 
     # Check if transaction_date falls within the specified range
-    if 1129 < transaction_date < 1401:
+    if transaction_date < 20100 and transaction_date > 112900:
         times_dict[transaction_id] = transaction_date
 
 count_sales_time = []
+ic(times_dict)
 
 for i, v in times_dict.items():
     for id, clerk in clerk_add_dict.items():
