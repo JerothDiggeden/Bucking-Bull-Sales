@@ -27,16 +27,13 @@ file_path = 'data/output_data.xlsx'
 df.to_excel(file_path, index=False)
 
 times = df
-ic(df)
+# ic(df)
 
 for col in df.columns:
     df[col] = df[col].ffill()
 
 all_trans_id = list(round(df["Transaction_ID"].dropna()))
 unique_id = list(df["Transaction_ID"].dropna().unique())
-
-ic(all_trans_id)
-ic(unique_id)
 
 unique_drinks = []
 unique_sauces = []
@@ -74,8 +71,6 @@ ml = df[mask_ml]
 add_ml_day = list(ml["Transaction_Date"].dropna().drop_duplicates())
 add_pc_day = list(pc["Transaction_Date"].dropna().drop_duplicates())
 
-ic(add_pc_day)
-
 add_pc_dict = {}
 add_ml_dict = {}
 clerk_add_dict = {}
@@ -83,13 +78,14 @@ clerk_add_dict = {}
 # EMPLOYEE LIST
 employees_cnt = []
 for v in df["Clerk"]:
-    if isinstance(v, str) and v != "Sales_Inc":
+    if isinstance(v, str) and v != "Sales Inc":
         employees_cnt.append(v)
 
 employees_tot_sales = Counter(employees_cnt)
 employees_tot_sales = dict(employees_tot_sales)
 
 employees = list(set(employees_cnt))
+ic(employees)
 
 # CREATE A DICTIONARY LINKING ALL TRANS IDS TO A CLERK
 for i, v in df.iterrows():
@@ -106,6 +102,8 @@ for i, v in df.iterrows():
                     key = round(key)
                     value = v['Clerk']
                     clerk_add_dict[key] = value
+
+ic(clerk_add_dict)
 
 # CREATE DICT OF ALL OCCURANCES OF SAUCES SOLD PER TRANS ID
 for i, v in df.iterrows():
