@@ -1,4 +1,5 @@
 import pandas as pd
+import math
 import numpy as np
 import customtkinter as ctk
 from icecream import ic
@@ -73,6 +74,8 @@ ml = df[mask_ml]
 add_ml_day = list(ml["Transaction_Date"].dropna().drop_duplicates())
 add_pc_day = list(pc["Transaction_Date"].dropna().drop_duplicates())
 
+ic(add_pc_day)
+
 add_pc_dict = {}
 add_ml_dict = {}
 clerk_add_dict = {}
@@ -97,14 +100,17 @@ for i, v in df.iterrows():
         for emp in employees:
             if emp in v['Clerk']:
                 key = v['Transaction_ID']
-                key = round(key)
-                value = v['Clerk']
-                clerk_add_dict[key] = value
+                if isinstance(key, float) and math.isnan(key):
+                    continue
+                if key != "NaN":
+                    key = round(key)
+                    value = v['Clerk']
+                    clerk_add_dict[key] = value
 
 # CREATE DICT OF ALL OCCURANCES OF SAUCES SOLD PER TRANS ID
 for i, v in df.iterrows():
     for pc in add_pc_day:
-        if pc in v['Transaction_Date']:
+        if pc in str(v['Transaction_Date']):
             key = v['Transaction_ID']
             value = v['Transaction_Date']
 
@@ -122,7 +128,7 @@ for i, v in df.iterrows():
 # CREATE DICT OF ALL OCCURANCES OF DRINKS SOLD PER TRANS ID
 for i, v in df.iterrows():
     for ml in add_ml_day:
-        if ml in v['Transaction_Date']:
+        if ml in str(v['Transaction_Date']):
             key = v['Transaction_ID']
             value = v['Transaction_Date']
 
@@ -142,10 +148,13 @@ drink_cnt = {}
 
 for i in unique_drinks:
     for k, v in add_ml_dict.items():
-        k = round(k)
-        k = str(k)
-        if i in v:
-            drink_cnt[k + "_" + i] = len(v)
+        if isinstance(k, float) and math.isnan(k):
+            continue
+        if k != "NaN":
+            k = round(k)
+            k = str(k)
+            if i in v:
+                drink_cnt[k + "_" + i] = len(v)
 
 final_drink_cnt = {}
 
@@ -191,7 +200,7 @@ times_dict = {}
 
 for i, row in times.iterrows():
     transaction_id = row["Transaction_ID"]
-    transaction_id = round(transaction_id)
+    # transaction_id = round(transaction_id)
     transaction_date = row["Transaction_Date"]
 
     # Check if transaction_date can be converted to an integer
@@ -220,4 +229,4 @@ for i, v in times_dict.items():
 ic(final_drink_cnt)
 ic(final_sauce_cnt)
 ic(employees_tot_sales)
-ic(f"Total Sales per Clerk between 11:30 & 14:00: {count_sales_time_total}")
+ic(f"Total Sales per Clerk between 11:30 & 14:00: {count_sales_time}")
