@@ -16,18 +16,25 @@ def contains_ml(cell):
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', 1223)
 df = pd.read_excel("data/DetailedAudit_ORIG.xls")
-df.replace({'\n': "", "/": "", ":": "", "  ": "_", " ": "_"})
 df.drop(columns=['Unnamed: 0', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 6', 'Unnamed: 7'], inplace=True)
 df.drop([0, 1, 2, 3, 4, 5, 6], axis=0, inplace=True)
 df = df.reset_index(drop=True)
 column_names = ["Transaction_ID", "Transaction_Date", "Terminal_ID", "Receipt_Number",
                 "Clerk", "Sales_Total", "Tax", "Sales_Ex_Tax"]
 df.columns = column_names
+
+replacements = {'\n': "", "/": "", ":": "", "  ": "_", " ": "_"}
+
+# Apply replacements
+for old, new in replacements.items():
+    df = df.replace(old, new, regex=True)
+
+
 file_path = 'data/output_data.xlsx'
 df.to_excel(file_path, index=False)
 
 times = df
-# ic(df)
+ic(df)
 
 for col in df.columns:
     df[col] = df[col].ffill()
@@ -212,11 +219,16 @@ for i, row in times.iterrows():
         times_dict[transaction_id] = transaction_date
 
 count_sales_time = []
+count_sales_time_total = []
+
+ic(times_dict)
 
 for i, v in times_dict.items():
     for id, clerk in clerk_add_dict.items():
+        ic(id)
         if id == i:
             v = str(v)
+            ic(v)
             count_sales_time.append(clerk)
             count_sales_time_total = Counter(count_sales_time)
             count_sales_time_total = dict(count_sales_time_total)
@@ -227,4 +239,5 @@ for i, v in times_dict.items():
 ic(final_drink_cnt)
 ic(final_sauce_cnt)
 ic(employees_tot_sales)
+ic(count_sales_time_total)
 ic(f"Total Sales per Clerk between 11:30 & 14:00: {count_sales_time}")
