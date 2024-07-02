@@ -146,6 +146,8 @@ for i, v in df.iterrows():
                     clerk_add_dict[key] = value
 
 ic(clerk_add_dict)
+df['Transaction_ID'] = df['Transaction_ID'].replace('nan', np.nan)
+df['Transaction_ID'] = df['Transaction_ID'].ffill()
 
 # CREATE DICT OF ALL OCCURANCES OF SAUCES SOLD PER TRANS ID
 for i, v in df.iterrows():
@@ -164,13 +166,6 @@ for i, v in df.iterrows():
             else:
                 # If key doesn't exist, initialize with a list containing the value
                 add_pc_dict[key] = [value]
-
-ic(add_ml_day)
-
-df['Transaction_ID'] = df['Transaction_ID'].replace('nan', np.nan)
-df['Transaction_ID'] = df['Transaction_ID'].ffill()
-
-ic(df)
 
 # CREATE DICT OF ALL OCCURANCES OF DRINKS SOLD PER TRANS ID
 for i, v in df.iterrows():
@@ -225,12 +220,16 @@ for k, v in drink_cnt.items():
 # COUNT SAUCES SOLD PER CLERK PER TRANS ID
 sauce_cnt = {}
 
+ic(add_pc_dict)
+
 for i in unique_sauces:
     for k, v in add_pc_dict.items():
         # k = round(k)
         k = str(k)
         if i in v:
             sauce_cnt[k + "_" + i] = len(v)
+
+ic(sauce_cnt)
 
 final_sauce_cnt = {}
 
@@ -262,7 +261,7 @@ for i, row in times.iterrows():
         continue  # Skip this row if transaction_date is not numeric
 
     # Check if transaction_date falls within the specified range
-    if transaction_date < 20100 and transaction_date > 112900:
+    if 1129 < transaction_date < 1401:
         times_dict[transaction_id] = transaction_date
 
 count_sales_time = []
