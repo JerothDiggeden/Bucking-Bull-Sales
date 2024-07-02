@@ -50,9 +50,6 @@ all_trans_id = [int(v) for v in all_trans_id]
 unique_id = [v for v in unique_id if str(v) != 'nan']
 unique_id = [int(v) for v in unique_id]
 
-ic(all_trans_id)
-ic(unique_id)
-
 unique_drinks = []
 unique_sauces = []
 
@@ -103,10 +100,30 @@ clerk_add_dict = {}
 
 # EMPLOYEE LIST
 employees_cnt = []
-for v in df["Clerk"]:
+clerk = list(df["Clerk"].unique())
+clerk2 = clerk
+for i, v in enumerate(clerk2):
+    try:
+        clerk[i] = float(v)
+    except ValueError:
+        continue
 
-    if isinstance(v, str) and v != "Sales Inc":
-        employees_cnt.append(v)
+clerk = [v for v in clerk if isinstance(v, str)]
+clerk.remove("Sales Inc")
+
+ic(clerk)
+
+employees_cnt = list(df["Clerk"])
+
+for i, v in enumerate(employees_cnt):
+    try:
+        employees_cnt[i] = float(v)
+    except ValueError:
+        continue
+employees_cnt = [v for v in employees_cnt if isinstance(v, str)]
+employees_cnt = [v for v in employees_cnt if v != 'Sales Inc']
+
+ic(employees_cnt)
 
 employees_tot_sales = Counter(employees_cnt)
 employees_tot_sales = dict(employees_tot_sales)
@@ -220,7 +237,6 @@ for k, v in sauce_cnt.items():
             final_sauce_cnt[t_id][clerk][sauce] = v
 
 times['Transaction_Date'] = times['Transaction_Date'].str[10:-2]
-ic(times)
 
 times_dict = {}
 
@@ -240,7 +256,6 @@ for i, row in times.iterrows():
         times_dict[transaction_id] = transaction_date
 
 count_sales_time = []
-ic(times_dict)
 
 for i, v in times_dict.items():
     for id, clerk in clerk_add_dict.items():
