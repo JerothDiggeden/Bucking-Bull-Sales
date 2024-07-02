@@ -20,6 +20,7 @@ global times
 global unique_id
 global unique_drinks
 global unique_sauces
+global clerk
 
 
 def win_main():
@@ -75,7 +76,9 @@ def generate_data():
 
     clerk = [v for v in clerk if isinstance(v, str)]
     clerk.remove("Sales Inc")
-
+    clerks = list(clerk)
+    ic(type(clerks))
+    ic(clerks)
     ic(clerk)
 
     employees_cnt = list(df["Clerk"])
@@ -254,6 +257,8 @@ def generate_data():
     ic(final_sauce_cnt)
     ic(employees_tot_sales)
     ic(f"Total Sales per Clerk between 11:30 & 14:00: {count_sales_time_total}")
+    ic(clerk)
+    update_ddn_clerks(clerks)
 
 
 def sel_file():
@@ -319,12 +324,23 @@ def sel_file():
 
     generate_data()
 
+def update_ddn_clerks(clerks):
+    ddn_clerks.configure(values=clerks)
+
 
 # MAIN WINDOW
 fme_main = ctk.CTkFrame(root)
 fme_main.pack()
+lbl_space = ctk.CTkLabel(master=fme_main, text="Bucking Bull Sales")
+lbl_space.pack()
+lbl_space = ctk.CTkLabel(master=fme_main, text="")
+lbl_space.pack()
 btn_sel_file = ctk.CTkButton(master=fme_main, text="Select File", command=sel_file)
 btn_sel_file.pack()
+lbl_space = ctk.CTkLabel(master=fme_main, text="")
+lbl_space.pack()
+ddn_clerks = ctk.CTkOptionMenu(master=fme_main, values=[])
+ddn_clerks.pack()
 
 win_main()
 
