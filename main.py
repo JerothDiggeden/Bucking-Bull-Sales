@@ -249,13 +249,18 @@ times['Transaction_Date'] = times['Transaction_Date'].str[10:-2]
 
 times_dict = {}
 
+ic(df)
+
 for i, row in times.iterrows():
     transaction_id = row["Transaction_ID"]
-    # transaction_id = round(transaction_id)
     transaction_date = row["Transaction_Date"]
 
     # Check if transaction_date can be converted to an integer
     try:
+        transaction_date = float(transaction_date)
+        transaction_date = round(transaction_date)
+        transaction_date = str(transaction_date)
+        transaction_date = transaction_date[:-2]
         transaction_date = int(transaction_date)
     except ValueError:
         continue  # Skip this row if transaction_date is not numeric
@@ -265,6 +270,8 @@ for i, row in times.iterrows():
         times_dict[transaction_id] = transaction_date
 
 count_sales_time = []
+
+ic(times_dict)
 
 for i, v in times_dict.items():
     for id, clerk in clerk_add_dict.items():
@@ -280,4 +287,4 @@ for i, v in times_dict.items():
 ic(final_drink_cnt)
 ic(final_sauce_cnt)
 ic(employees_tot_sales)
-ic(f"Total Sales per Clerk between 11:30 & 14:00: {count_sales_time}")
+ic(f"Total Sales per Clerk between 11:30 & 14:00: {count_sales_time_total}")
