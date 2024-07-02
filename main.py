@@ -29,13 +29,11 @@ def replace_symbols(text, replacements):
 df = df.applymap(lambda x: replace_symbols(str(x), replacements))
 
 df.drop(columns=['Unnamed: 0', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 6', 'Unnamed: 7'], inplace=True)
-df.drop([0, 1, 2, 3, 4, 5, 6], axis=0, inplace=True)
+df.drop([0, 1, 2, 3, 4, 5], axis=0, inplace=True)
 df = df.reset_index(drop=True)
 column_names = ["Transaction_ID", "Transaction_Date", "Terminal_ID", "Receipt_Number",
                 "Clerk", "Sales_Total", "Tax", "Sales_Ex_Tax"]
 df.columns = column_names
-file_path = 'data/output_data.xlsx'
-df.to_excel(file_path, index=False)
 
 times = df
 
@@ -147,7 +145,7 @@ for i, v in df.iterrows():
                     value = v['Clerk']
                     clerk_add_dict[key] = value
 
-# ic(clerk_add_dict)
+ic(clerk_add_dict)
 
 # CREATE DICT OF ALL OCCURANCES OF SAUCES SOLD PER TRANS ID
 for i, v in df.iterrows():
@@ -167,13 +165,20 @@ for i, v in df.iterrows():
                 # If key doesn't exist, initialize with a list containing the value
                 add_pc_dict[key] = [value]
 
+ic(add_ml_day)
+
+df['Transaction_ID'] = df['Transaction_ID'].replace('nan', np.nan)
+df['Transaction_ID'] = df['Transaction_ID'].ffill()
+
+ic(df)
+
 # CREATE DICT OF ALL OCCURANCES OF DRINKS SOLD PER TRANS ID
 for i, v in df.iterrows():
     for ml in add_ml_day:
+        # Convert the Transaction_Date to a string for comparison
         if ml in str(v['Transaction_Date']):
             key = v['Transaction_ID']
             value = v['Transaction_Date']
-
             # Check if key already exists in add_ml_dict
             if key in add_ml_dict:
                 # Ensure the value is stored as a list
@@ -188,6 +193,8 @@ for i, v in df.iterrows():
 # COUNT DRINKS SOLD PER CLERK PER TRANS ID
 drink_cnt = {}
 
+ic(add_ml_dict)
+
 for i in unique_drinks:
     for k, v in add_ml_dict.items():
         if isinstance(k, float) and math.isnan(k):
@@ -197,6 +204,8 @@ for i in unique_drinks:
             k = str(k)
             if i in v:
                 drink_cnt[k + "_" + i] = len(v)
+
+ic(drink_cnt)
 
 final_drink_cnt = {}
 
@@ -211,6 +220,7 @@ for k, v in drink_cnt.items():
             if clerk not in final_drink_cnt[t_id]:
                 final_drink_cnt[t_id][clerk] = {}
             final_drink_cnt[t_id][clerk][drink] = v
+
 
 # COUNT SAUCES SOLD PER CLERK PER TRANS ID
 sauce_cnt = {}
