@@ -4,6 +4,28 @@ import numpy as np
 import customtkinter as ctk
 from icecream import ic
 from collections import Counter
+from tkinter import filedialog, messagebox
+
+
+# CUSTOMTKINTER THEME
+ctk.set_appearance_mode("light")
+ctk.set_default_color_theme("C:/Generate Charts/Day_Grey.json")
+# ROOT SETTINGS
+root = ctk.CTk()
+root.geometry("300 x 700")
+root.title("Generate Charts")
+
+
+def sel_file():
+    # SELECT FILE
+    file_sel = filedialog.askopenfilename()
+    ext_len = len(file_sel)
+    ext_len = ext_len - 3
+    file_ext = file_sel[ext_len:]
+    if file_ext == "lsx":
+        df = pd.read_excel(file_sel)
+    else:
+        messagebox.showerror(message="Wrong File Type! Please Select a XLSX File.")
 
 
 def contains_pc(cell):
@@ -61,20 +83,6 @@ for v in df["Transaction_Date"]:
 
 unique_drinks = list(set(unique_drinks))
 unique_sauces = list(set(unique_sauces))
-
-# for i, v in enumerate(unique_id):
-#     if isinstance(v, float) and math.isnan(v):
-#         continue  # Skip NaN values
-#
-#     # Check if v is numeric and convert to integer
-#     if isinstance(v, (int, float)):
-#         try:
-#             unique_id[i] = int(v)
-#         except ValueError:
-#             pass  # Handle if v is not convertible to int
-#
-# for i, v in enumerate(all_trans_id):
-#     all_trans_id[i] = int(v)
 
 trans_date = list(df["Transaction_Date"])
 clerk = list(df["Clerk"])
@@ -283,8 +291,21 @@ for i, v in times_dict.items():
 
 # How many transactions per Clerk per day
 
-
 ic(final_drink_cnt)
 ic(final_sauce_cnt)
 ic(employees_tot_sales)
 ic(f"Total Sales per Clerk between 11:30 & 14:00: {count_sales_time_total}")
+
+
+def win_main():
+    fme_main.pack(fill=ctk.BOTH, expand=True)
+
+
+# MAIN WINDOW
+fme_main = ctk.CTkFrame(root)
+fme_main.pack()
+btn_sel_file = ctk.CTkButton(master=fme_main, text="Select File", command=sel_file)
+btn_sel_file.pack()
+
+win_main()
+root.mainloop()
