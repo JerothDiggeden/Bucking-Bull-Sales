@@ -326,6 +326,7 @@ def sel_file():
 
 def update_ddn_clerks(clerks):
     ddn_clerks.configure(values=clerks)
+    lbl_box_clerks.configure(text=str(clerks))
 
 
 # MAIN WINDOW
@@ -339,7 +340,11 @@ btn_sel_file = ctk.CTkButton(master=fme_main, text="Select File", command=sel_fi
 btn_sel_file.pack()
 lbl_space = ctk.CTkLabel(master=fme_main, text="")
 lbl_space.pack()
-ddn_clerks = ctk.CTkOptionMenu(master=fme_main, values=[])
+lbl_box_clerks = ctk.CTkLabel(master=fme_main, text="Clerks")
+lbl_box_clerks.pack()
+lbl_space = ctk.CTkLabel(master=fme_main, text="")
+lbl_space.pack()
+ddn_clerks = ctk.CTkOptionMenu(master=fme_main, values=["Clerk"])
 ddn_clerks.pack()
 
 win_main()
