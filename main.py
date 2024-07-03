@@ -359,7 +359,10 @@ def disp_details():
     order_id = ddn_orders.get()
     if order_id in drinks:
         drink_data = drinks[order_id]
-        lbl_order.configure(text=drink_data)
+        lbl_order_drinks.configure(text=f"{drink_data}")
+    elif order_id in sauces:
+        sauce_data = sauces[order_id]
+        lbl_order_sauces.configure(text=f"{sauce_data}")
     else:
         lbl_order.configure(text="Order ID not found.")
 
@@ -408,7 +411,10 @@ win_main()
 btn_disp_det = ctk.CTkButton(master=fme_main, command=disp_details)
 btn_disp_det.grid(column=1, row=3)
 
-lbl_order = ctk.CTkLabel(master=fme_main, text="Order Details", font=("Arial 10 bold", 20))
-lbl_order.grid(column=1, row=4, padx=5, pady=5)
+lbl_order_drinks = ctk.CTkLabel(master=fme_main, text="Drinks", font=("Arial 10 bold", 20))
+lbl_order_drinks.grid(column=1, row=4, padx=5, pady=5)
+
+lbl_order_sauces = ctk.CTkLabel(master=fme_main, text="Sauces", font=("Arial 10 bold", 20))
+lbl_order_sauces.grid(column=1, row=5, padx=5, pady=5)
 
 root.mainloop()
