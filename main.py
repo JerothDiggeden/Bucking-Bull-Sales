@@ -21,6 +21,8 @@ global unique_id
 global unique_drinks
 global unique_sauces
 global clerk
+global final_drink_count
+global final_sauce_count
 
 
 def win_main():
@@ -41,6 +43,9 @@ def generate_data():
     global unique_id
     global unique_drinks
     global unique_sauces
+    global final_drink_count
+    global final_sauce_count
+
     unique_drinks = list(set(unique_drinks))
     unique_sauces = list(set(unique_sauces))
 
@@ -258,7 +263,12 @@ def generate_data():
     ic(employees_tot_sales)
     ic(f"Total Sales per Clerk between 11:30 & 14:00: {count_sales_time_total}")
     ic(clerk)
-    update_ddn_clerks(clerks, employees_tot_sales)
+    unique_id_str = unique_id
+    for i, v in enumerate(unique_id):
+        unique_id_str[i] = str(unique_id[i])
+
+    update_ddn_clerks(clerks, employees_tot_sales, unique_id_str)
+    return final_drink_cnt
 
 
 def sel_file():
@@ -311,6 +321,8 @@ def sel_file():
     unique_id = [v for v in unique_id if str(v) != 'nan']
     unique_id = [int(v) for v in unique_id]
 
+    ic(unique_id)
+
     unique_drinks = []
     unique_sauces = []
 
@@ -325,7 +337,7 @@ def sel_file():
     generate_data()
 
 
-def update_ddn_clerks(clerks, sales):
+def update_ddn_clerks(clerks, sales, id):
     ddn_clerks.configure(values=clerks)
     counter = 0
     for c in clerks:
@@ -333,6 +345,13 @@ def update_ddn_clerks(clerks, sales):
         one = f"txt_box_clerks{counter + 1}.insert('0.0', clerk_one + ' - ' + str(sales['{clerk_one}']))"
         counter = counter + 1
         exec(one)
+    ddn_orders.configure(values=id)
+
+
+def disp_details():
+    order_id = ddn_orders.get()
+    drink_data = final_drink_count[order_id]
+    lbl_order.configure(text=drink_data)
 
 
 # MAIN WINDOW
@@ -344,7 +363,7 @@ lbl_space = ctk.CTkLabel(master=fme_main, text="Bucking Bull Sales", font=('Aria
 lbl_space.grid(column=0, row=0, padx=5, pady=5)
 btn_sel_file = ctk.CTkButton(master=fme_main, text="Select File", command=sel_file)
 btn_sel_file.grid(column=0, row=1, padx=5, pady=5)
-lbl_box_clerks = ctk.CTkLabel(master=fme_main, text="Clerks", font=("Arial 10 bold", 20))
+lbl_box_clerks = ctk.CTkLabel(master=fme_main, text="Clerk - Sales", font=("Arial 10 bold", 20))
 lbl_box_clerks.grid(column=0, row=2, padx=5, pady=5)
 
 txt_box_clerks1 = ctk.CTkTextbox(master=fme_main, height=10, font=("Arial 10 bold", 20))
@@ -371,6 +390,15 @@ txt_box_clerks10.grid(column=0, row=12, padx=5, pady=5)
 ddn_clerks = ctk.CTkOptionMenu(master=fme_main, values=["Clerk"])
 ddn_clerks.grid(column=1, row=1)
 
+ddn_orders = ctk.CTkOptionMenu(master=fme_main, values=["Orders"])
+ddn_orders.grid(column=1, row=2)
+
 win_main()
+
+btn_disp_det = ctk.CTkButton(master=fme_main, command=disp_details)
+btn_disp_det.grid(column=1, row=3)
+
+lbl_order = ctk.CTkLabel(master=fme_main, text="Order Details", font=("Arial 10 bold", 20))
+lbl_order.grid(column=1, row=4, padx=5, pady=5)
 
 root.mainloop()
