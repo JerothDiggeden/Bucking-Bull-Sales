@@ -24,6 +24,9 @@ global clerk
 global final_drink_count
 global final_sauce_count
 
+drinks = {}
+sauces = {}
+
 
 def win_main():
     fme_main.pack(fill=ctk.BOTH, expand=True)
@@ -224,8 +227,6 @@ def generate_data():
 
     times_dict = {}
 
-    ic(df)
-
     for i, row in times.iterrows():
         transaction_id = row["Transaction_ID"]
         transaction_date = row["Transaction_Date"]
@@ -268,7 +269,8 @@ def generate_data():
         unique_id_str[i] = str(unique_id[i])
 
     update_ddn_clerks(clerks, employees_tot_sales, unique_id_str)
-    return final_drink_cnt
+    return final_drink_cnt, final_sauce_cnt
+
 
 
 def sel_file():
@@ -277,6 +279,8 @@ def sel_file():
     global unique_id
     global unique_drinks
     global unique_sauces
+    global drinks
+    global sauces
     # SELECT FILE
     file_sel = filedialog.askopenfilename()
     ext_len = len(file_sel)
@@ -334,6 +338,7 @@ def sel_file():
         if "PC" in str(v):
             unique_sauces.append(v)
 
+    drinks, sauces = generate_data()
     generate_data()
 
 
@@ -349,9 +354,14 @@ def update_ddn_clerks(clerks, sales, id):
 
 
 def disp_details():
+    global drinks
+    global sauces
     order_id = ddn_orders.get()
-    drink_data = final_drink_count[order_id]
-    lbl_order.configure(text=drink_data)
+    if order_id in drinks:
+        drink_data = drinks[order_id]
+        lbl_order.configure(text=drink_data)
+    else:
+        lbl_order.configure(text="Order ID not found.")
 
 
 # MAIN WINDOW
