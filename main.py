@@ -258,7 +258,7 @@ def generate_data():
     ic(employees_tot_sales)
     ic(f"Total Sales per Clerk between 11:30 & 14:00: {count_sales_time_total}")
     ic(clerk)
-    update_ddn_clerks(clerks)
+    update_ddn_clerks(clerks, employees_tot_sales)
 
 
 def sel_file():
@@ -324,11 +324,13 @@ def sel_file():
 
     generate_data()
 
-def update_ddn_clerks(clerks):
+
+def update_ddn_clerks(clerks, sales):
     ddn_clerks.configure(values=clerks)
     counter = 0
     for c in clerks:
-        one = f"txt_box_clerks{counter + 1}.insert('0.0', clerks[{counter}])"
+        clerk_one = clerks[counter]
+        one = f"txt_box_clerks{counter + 1}.insert('0.0', clerk_one + ' - ' + str(sales['{clerk_one}']))"
         counter = counter + 1
         exec(one)
 
@@ -338,33 +340,33 @@ fme_main = ctk.CTkFrame(root)
 fme_main.pack()
 fme_main.grid_columnconfigure(0, weight=1, minsize=200)
 fme_main.grid_columnconfigure(1, weight=10, minsize=700)
-lbl_space = ctk.CTkLabel(master=fme_main, text="Bucking Bull Sales")
-lbl_space.grid(column=0, row=0)
+lbl_space = ctk.CTkLabel(master=fme_main, text="Bucking Bull Sales", font=('Arial', 20))
+lbl_space.grid(column=0, row=0, padx=5, pady=5)
 btn_sel_file = ctk.CTkButton(master=fme_main, text="Select File", command=sel_file)
-btn_sel_file.grid(column=0, row=1)
+btn_sel_file.grid(column=0, row=1, padx=5, pady=5)
 lbl_box_clerks = ctk.CTkLabel(master=fme_main, text="Clerks", font=("Arial 10 bold", 20))
-lbl_box_clerks.grid(column=0, row=2)
+lbl_box_clerks.grid(column=0, row=2, padx=5, pady=5)
 
 txt_box_clerks1 = ctk.CTkTextbox(master=fme_main, height=10, font=("Arial 10 bold", 20))
-txt_box_clerks1.grid(column=0, row=3)
+txt_box_clerks1.grid(column=0, row=3, padx=5, pady=5)
 txt_box_clerks2 = ctk.CTkTextbox(master=fme_main, height=10, font=("Arial 10 bold", 20))
-txt_box_clerks2.grid(column=0, row=4)
+txt_box_clerks2.grid(column=0, row=4, padx=5, pady=5)
 txt_box_clerks3 = ctk.CTkTextbox(master=fme_main, height=10, font=("Arial 10 bold", 20))
-txt_box_clerks3.grid(column=0, row=5)
+txt_box_clerks3.grid(column=0, row=5, padx=5, pady=5)
 txt_box_clerks4 = ctk.CTkTextbox(master=fme_main, height=10, font=("Arial 10 bold", 20))
-txt_box_clerks4.grid(column=0, row=6)
+txt_box_clerks4.grid(column=0, row=6, padx=5, pady=5)
 txt_box_clerks5 = ctk.CTkTextbox(master=fme_main, height=10, font=("Arial 10 bold", 20))
-txt_box_clerks5.grid(column=0, row=7)
+txt_box_clerks5.grid(column=0, row=7, padx=5, pady=5)
 txt_box_clerks6 = ctk.CTkTextbox(master=fme_main, height=10, font=("Arial 10 bold", 20))
-txt_box_clerks6.grid(column=0, row=8)
+txt_box_clerks6.grid(column=0, row=8, padx=5, pady=5)
 txt_box_clerks7 = ctk.CTkTextbox(master=fme_main, height=10, font=("Arial 10 bold", 20))
-txt_box_clerks7.grid(column=0, row=9)
+txt_box_clerks7.grid(column=0, row=9, padx=5, pady=5)
 txt_box_clerks8 = ctk.CTkTextbox(master=fme_main, height=10, font=("Arial 10 bold", 20))
-txt_box_clerks8.grid(column=0, row=10)
+txt_box_clerks8.grid(column=0, row=10, padx=5, pady=5)
 txt_box_clerks9 = ctk.CTkTextbox(master=fme_main, height=10, font=("Arial 10 bold", 20))
-txt_box_clerks9.grid(column=0, row=11)
+txt_box_clerks9.grid(column=0, row=11, padx=5, pady=5)
 txt_box_clerks10 = ctk.CTkTextbox(master=fme_main, height=10, font=("Arial 10 bold", 20))
-txt_box_clerks10.grid(column=0, row=12)
+txt_box_clerks10.grid(column=0, row=12, padx=5, pady=5)
 
 ddn_clerks = ctk.CTkOptionMenu(master=fme_main, values=["Clerk"])
 ddn_clerks.grid(column=1, row=1)
