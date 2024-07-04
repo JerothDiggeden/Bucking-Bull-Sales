@@ -348,7 +348,6 @@ def sel_file():
             unique_sauces.append(v)
 
     drinks, sauces = generate_data()
-    generate_data()
 
 
 def update_ddn_clerks(clerks, sales, id):
