@@ -27,6 +27,7 @@ global final_sauce_count
 drinks = {}
 sauces = {}
 times = pd.DataFrame
+clerk_dict = {}
 
 
 def win_main():
@@ -235,27 +236,23 @@ def generate_data():
         unique_id_str[i] = str(unique_id[i])
 
     update_ddn_clerks(clerks, employees_tot_sales, unique_id_str)
-    return final_drink_cnt, final_sauce_cnt
+    return final_drink_cnt, final_sauce_cnt, clerk_add_dict
 
 count_sales_time_total = {}
-clerk_add_dict = {}
 
 
 def from_to_times():
     global clerk_add_dict
     global df
     global count_sales_time_total
-    from_time = txt_box_from.get("1.0")
-    to_time = txt_box_to.get("1.0")
+    global clerk_dict
+    from_time = txt_box_from.get("1.0", "6.0")
+    to_time = txt_box_to.get("1.0", "6.0")
     from_time = int(from_time)
     to_time = int(to_time)
 
     times = df
-
-    ic(times)
     times['Transaction_Date'] = times['Transaction_Date'].str[10:-9]
-
-    ic(times)
 
     times_dict = {}
 
@@ -265,10 +262,10 @@ def from_to_times():
 
         # Check if transaction_date can be converted to an integer
         try:
-            transaction_date = float(transaction_date)
-            transaction_date = round(transaction_date)
-            transaction_date = str(transaction_date)
-            transaction_date = transaction_date[:-2]
+            # transaction_date = float(transaction_date)
+            # transaction_date = round(transaction_date)
+            # transaction_date = str(transaction_date)
+            # transaction_date = transaction_date[:-2]
             transaction_date = int(transaction_date)
         except ValueError:
             continue  # Skip this row if transaction_date is not numeric
@@ -280,9 +277,10 @@ def from_to_times():
     count_sales_time = []
 
     ic(times_dict)
+    ic(clerk_dict)
 
     for i, v in times_dict.items():
-        for id, clerk in clerk_add_dict.items():
+        for id, clerk in clerk_dict.items():
             if id == i:
                 v = str(v)
                 count_sales_time.append(clerk)
@@ -300,6 +298,7 @@ def sel_file():
     global unique_sauces
     global drinks
     global sauces
+    global clerk_dict
     # SELECT FILE
     file_sel = filedialog.askopenfilename()
     ext_len = len(file_sel)
@@ -357,7 +356,7 @@ def sel_file():
         if "PC" in str(v):
             unique_sauces.append(v)
 
-    drinks, sauces = generate_data()
+    drinks, sauces, clerk_dict = generate_data()
 
 
 def update_ddn_clerks(clerks, sales, id):
