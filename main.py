@@ -262,10 +262,6 @@ def from_to_times():
 
         # Check if transaction_date can be converted to an integer
         try:
-            # transaction_date = float(transaction_date)
-            # transaction_date = round(transaction_date)
-            # transaction_date = str(transaction_date)
-            # transaction_date = transaction_date[:-2]
             transaction_date = int(transaction_date)
         except ValueError:
             continue  # Skip this row if transaction_date is not numeric
@@ -379,11 +375,12 @@ def disp_details():
     if order_id in drinks:
         drink_data = drinks[order_id]
         lbl_order_drinks.configure(text=f"{drink_data}")
-    elif order_id in sauces:
+    if order_id in sauces:
         sauce_data = sauces[order_id]
         lbl_order_sauces.configure(text=f"{sauce_data}")
-    else:
+    if order_id not in drinks:
         lbl_order_drinks.configure(text="No Drink.")
+    if order_id not in sauces:
         lbl_order_sauces.configure(text="No Sauce.")
 
 
@@ -392,12 +389,15 @@ fme_main = ctk.CTkFrame(root)
 fme_main.pack()
 fme_main.grid_columnconfigure(0, weight=1, minsize=200)
 fme_main.grid_columnconfigure(1, weight=10, minsize=500)
-lbl_space = ctk.CTkLabel(master=fme_main, text="Bucking Bull Sales", font=('Arial', 20))
+lbl_space = ctk.CTkLabel(master=fme_main, text="Bucking Bull Sales", font=('Arial Bold', 20))
 lbl_space.grid(column=0, row=0, padx=5, pady=5)
 btn_sel_file = ctk.CTkButton(master=fme_main, text="Select File", command=sel_file)
 btn_sel_file.grid(column=0, row=1, padx=5, pady=5)
-lbl_box_clerks = ctk.CTkLabel(master=fme_main, text="Clerk - Sales", font=("Arial 10 bold", 20))
+lbl_box_clerks = ctk.CTkLabel(master=fme_main, text="Clerk - Sales", font=("Arial bold", 20))
 lbl_box_clerks.grid(column=0, row=2, padx=5, pady=5)
+
+lbl_box_clerks = ctk.CTkLabel(master=fme_main, text="Clerk Add-Ons", font=("Arial bold", 20))
+lbl_box_clerks.grid(column=1, row=2, padx=5, pady=5)
 
 txt_box_clerks1 = ctk.CTkTextbox(master=fme_main, height=10, font=("Arial 10 bold", 20))
 txt_box_clerks1.grid(column=0, row=3, padx=5, pady=5)
@@ -431,20 +431,20 @@ win_main()
 btn_disp_det = ctk.CTkButton(master=fme_main, text="Data", command=disp_details)
 btn_disp_det.grid(column=1, row=1, padx=5, pady=5, sticky="e")
 
-lbl_order_drinks = ctk.CTkLabel(master=fme_main, text="", font=("Arial 10 bold", 20))
-lbl_order_drinks.grid(column=1, row=4, padx=5, pady=5)
+lbl_order_drinks = ctk.CTkLabel(master=fme_main, text="None", font=("Arial 10 bold", 20))
+lbl_order_drinks.grid(column=1, row=3, padx=5, pady=5)
 
-lbl_order_sauces = ctk.CTkLabel(master=fme_main, text="", font=("Arial 10 bold", 20))
-lbl_order_sauces.grid(column=1, row=5, padx=5, pady=5)
+lbl_order_sauces = ctk.CTkLabel(master=fme_main, text="None", font=("Arial 10 bold", 20))
+lbl_order_sauces.grid(column=1, row=4, padx=5, pady=5)
 
-lbl_order_sauces = ctk.CTkLabel(master=fme_main, text="Time Period", font=("Arial 10 bold", 20))
-lbl_order_sauces.grid(column=1, row=6, padx=5, pady=5)
+lbl_order_time = ctk.CTkLabel(master=fme_main, text="Time Period", font=("Arial bold", 20))
+lbl_order_time.grid(column=1, row=6, padx=5, pady=5)
 
 txt_box_from = ctk.CTkTextbox(master=fme_main, height=10, font=("Arial 10 bold", 20))
 txt_box_from.grid(column=1, row=7, padx=5, pady=5, sticky="w")
 
-lbl_order_sauces = ctk.CTkLabel(master=fme_main, text=" - ", font=("Arial 10 bold", 20))
-lbl_order_sauces.grid(column=1, row=7, padx=5, pady=5)
+lbl_order_dash = ctk.CTkLabel(master=fme_main, text=" - ", font=("Arial 10 bold", 20))
+lbl_order_dash.grid(column=1, row=7, padx=5, pady=5)
 
 txt_box_to = ctk.CTkTextbox(master=fme_main, height=10, font=("Arial 10 bold", 20))
 txt_box_to.grid(column=1, row=7, padx=5, pady=5, sticky="e")
