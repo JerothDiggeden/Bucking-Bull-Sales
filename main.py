@@ -223,6 +223,29 @@ def generate_data():
                     final_sauce_cnt[t_id][clerk] = {}
                 final_sauce_cnt[t_id][clerk][sauce] = v
 
+    # How many transactions per Clerk per day
+
+    ic(final_drink_cnt)
+    ic(final_sauce_cnt)
+    ic(employees_tot_sales)
+    ic(f"Total Sales per Clerk between 11:30 & 14:00: {count_sales_time_total}")
+    ic(clerk)
+    unique_id_str = unique_id
+    for i, v in enumerate(unique_id):
+        unique_id_str[i] = str(unique_id[i])
+
+    update_ddn_clerks(clerks, employees_tot_sales, unique_id_str)
+    return final_drink_cnt, final_sauce_cnt
+
+count_sales_time_total = {}
+
+def from_to_times():
+    global count_sales_time_total
+    from_time = txt_box_from.get("1.0")
+    to_time = txt_box_to.get("1.0")
+    from_time = int(from_time)
+    to_time = int(to_time)
+
     times['Transaction_Date'] = times['Transaction_Date'].str[10:-2]
 
     times_dict = {}
@@ -242,7 +265,7 @@ def generate_data():
             continue  # Skip this row if transaction_date is not numeric
 
         # Check if transaction_date falls within the specified range
-        if 1129 < transaction_date < 1401:
+        if from_time < transaction_date < to_time:
             times_dict[transaction_id] = transaction_date
 
     count_sales_time = []
@@ -257,21 +280,7 @@ def generate_data():
                 count_sales_time_total = Counter(count_sales_time)
                 count_sales_time_total = dict(count_sales_time_total)
 
-    # How many transactions per Clerk per day
-
-    ic(final_drink_cnt)
-    ic(final_sauce_cnt)
-    ic(employees_tot_sales)
-    ic(f"Total Sales per Clerk between 11:30 & 14:00: {count_sales_time_total}")
-    ic(clerk)
-    unique_id_str = unique_id
-    for i, v in enumerate(unique_id):
-        unique_id_str[i] = str(unique_id[i])
-
-    update_ddn_clerks(clerks, employees_tot_sales, unique_id_str)
-    return final_drink_cnt, final_sauce_cnt
-
-
+    lbl_times.configure(text=count_sales_time_total)
 
 def sel_file():
     global df
@@ -357,6 +366,8 @@ def disp_details():
     global drinks
     global sauces
     order_id = ddn_orders.get()
+    lbl_order_sauces.configure(text="")
+    lbl_order_drinks.configure(text="")
     if order_id in drinks:
         drink_data = drinks[order_id]
         lbl_order_drinks.configure(text=f"{drink_data}")
@@ -364,14 +375,15 @@ def disp_details():
         sauce_data = sauces[order_id]
         lbl_order_sauces.configure(text=f"{sauce_data}")
     else:
-        lbl_order.configure(text="Order ID not found.")
+        lbl_order_drinks.configure(text="No Drink.")
+        lbl_order_sauces.configure(text="No Sauce.")
 
 
 # MAIN WINDOW
 fme_main = ctk.CTkFrame(root)
 fme_main.pack()
 fme_main.grid_columnconfigure(0, weight=1, minsize=200)
-fme_main.grid_columnconfigure(1, weight=10, minsize=700)
+fme_main.grid_columnconfigure(1, weight=10, minsize=500)
 lbl_space = ctk.CTkLabel(master=fme_main, text="Bucking Bull Sales", font=('Arial', 20))
 lbl_space.grid(column=0, row=0, padx=5, pady=5)
 btn_sel_file = ctk.CTkButton(master=fme_main, text="Select File", command=sel_file)
@@ -401,20 +413,38 @@ txt_box_clerks10 = ctk.CTkTextbox(master=fme_main, height=10, font=("Arial 10 bo
 txt_box_clerks10.grid(column=0, row=12, padx=5, pady=5)
 
 ddn_clerks = ctk.CTkOptionMenu(master=fme_main, values=["Clerk"])
-ddn_clerks.grid(column=1, row=1)
+ddn_clerks.grid(column=1, row=1, padx=5, pady=5, sticky="w")
 
 ddn_orders = ctk.CTkOptionMenu(master=fme_main, values=["Orders"])
-ddn_orders.grid(column=1, row=2)
+ddn_orders.grid(column=1, row=1, padx=5, pady=5)
 
 win_main()
 
-btn_disp_det = ctk.CTkButton(master=fme_main, command=disp_details)
-btn_disp_det.grid(column=1, row=3)
+btn_disp_det = ctk.CTkButton(master=fme_main, text="Data", command=disp_details)
+btn_disp_det.grid(column=1, row=1, padx=5, pady=5, sticky="e")
 
-lbl_order_drinks = ctk.CTkLabel(master=fme_main, text="Drinks", font=("Arial 10 bold", 20))
+lbl_order_drinks = ctk.CTkLabel(master=fme_main, text="", font=("Arial 10 bold", 20))
 lbl_order_drinks.grid(column=1, row=4, padx=5, pady=5)
 
-lbl_order_sauces = ctk.CTkLabel(master=fme_main, text="Sauces", font=("Arial 10 bold", 20))
+lbl_order_sauces = ctk.CTkLabel(master=fme_main, text="", font=("Arial 10 bold", 20))
 lbl_order_sauces.grid(column=1, row=5, padx=5, pady=5)
+
+lbl_order_sauces = ctk.CTkLabel(master=fme_main, text="Time Period", font=("Arial 10 bold", 20))
+lbl_order_sauces.grid(column=1, row=6, padx=5, pady=5)
+
+txt_box_from = ctk.CTkTextbox(master=fme_main, height=10, font=("Arial 10 bold", 20))
+txt_box_from.grid(column=1, row=7, padx=5, pady=5, sticky="w")
+
+lbl_order_sauces = ctk.CTkLabel(master=fme_main, text=" - ", font=("Arial 10 bold", 20))
+lbl_order_sauces.grid(column=1, row=7, padx=5, pady=5)
+
+txt_box_to = ctk.CTkTextbox(master=fme_main, height=10, font=("Arial 10 bold", 20))
+txt_box_to.grid(column=1, row=7, padx=5, pady=5, sticky="e")
+
+btn_disp_det = ctk.CTkButton(master=fme_main, text="Data", command=from_to_times)
+btn_disp_det.grid(column=1, row=8, padx=5, pady=5)
+
+lbl_times = ctk.CTkLabel(master=fme_main, text="", font=("Arial 10 bold", 20))
+lbl_times.grid(column=1, row=9, padx=5, pady=5)
 
 root.mainloop()
