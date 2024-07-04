@@ -26,6 +26,7 @@ global final_sauce_count
 
 drinks = {}
 sauces = {}
+times = pd.DataFrame
 
 
 def win_main():
@@ -228,7 +229,6 @@ def generate_data():
     ic(final_drink_cnt)
     ic(final_sauce_cnt)
     ic(employees_tot_sales)
-    ic(f"Total Sales per Clerk between 11:30 & 14:00: {count_sales_time_total}")
     ic(clerk)
     unique_id_str = unique_id
     for i, v in enumerate(unique_id):
@@ -238,15 +238,24 @@ def generate_data():
     return final_drink_cnt, final_sauce_cnt
 
 count_sales_time_total = {}
+clerk_add_dict = {}
+
 
 def from_to_times():
+    global clerk_add_dict
+    global df
     global count_sales_time_total
     from_time = txt_box_from.get("1.0")
     to_time = txt_box_to.get("1.0")
     from_time = int(from_time)
     to_time = int(to_time)
 
-    times['Transaction_Date'] = times['Transaction_Date'].str[10:-2]
+    times = df
+
+    ic(times)
+    times['Transaction_Date'] = times['Transaction_Date'].str[10:-9]
+
+    ic(times)
 
     times_dict = {}
 
@@ -280,6 +289,7 @@ def from_to_times():
                 count_sales_time_total = Counter(count_sales_time)
                 count_sales_time_total = dict(count_sales_time_total)
 
+    ic(count_sales_time_total)
     lbl_times.configure(text=count_sales_time_total)
 
 def sel_file():
