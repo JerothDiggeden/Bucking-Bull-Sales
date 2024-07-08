@@ -231,17 +231,19 @@ def generate_data():
     sub_count = {}
     ic(subs)
 
-    for i, v in subs.iterrows():
+    ic(sub_count)
+
+    for i, v in subs.copy().iterrows():
         v = str(v)
         v = v[16:]
         v = v.replace("dtype: object", "")
         v = v.replace(f"Name: {i},", "")
         v = v.strip()
-        sub_count[i] = v
-
-    for k, v in sub_count.copy().items():
-        if v != "Half Beef Sub" and v != "Full Beef Sub" and v != "Half Pork Sub" and v != "Full Pork Sub" and v != "Half Lamb Sub" and v != "Full Lamb Sub":
-            del sub_count[k]
+        if (v == "Half Beef Sub" or v == "Full Beef Sub" or v == "Half Pork Sub" or v == "Full Pork Sub"
+                or v == "Half Lamb Sub" or v == "Full Lamb Sub" or v == "Full ChickSchnit Sub" or v == "Half ChickSchnit Sub"):
+            sub_count[i] = v
+        else:
+            pass
 
     ic(sub_count)
 
