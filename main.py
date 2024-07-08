@@ -423,6 +423,7 @@ def update_ddn_clerks(clerks, sales, id, subs, count_half, count_full):
     lbl_subs.configure(text=subs)
 
 
+# DISPLAY DETAILS
 def disp_details():
     global drinks
     global sauces
