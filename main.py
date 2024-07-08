@@ -7,9 +7,10 @@ from collections import Counter
 from tkinter import filedialog, messagebox
 
 
+pd.set_option('display.max_columns', 10)
 # CUSTOMTKINTER THEME
 ctk.set_appearance_mode("light")
-ctk.set_default_color_theme("C:/Generate Charts/Day_Grey.json")
+ctk.set_default_color_theme("Day_Grey.json")
 # ROOT SETTINGS
 root = ctk.CTk()
 root.geometry("300 x 700")
@@ -225,6 +226,25 @@ def generate_data():
                     final_sauce_cnt[t_id][clerk] = {}
                 final_sauce_cnt[t_id][clerk][sauce] = v
 
+    subs = df.loc[:"Transaction_ID", :"Transaction_Date"]
+    subs = subs.set_index("Transaction_ID")
+    sub_count = {}
+    ic(subs)
+
+    for i, v in subs.iterrows():
+        v = str(v)
+        v = v[16:]
+        v = v.replace("dtype: object", "")
+        v = v.replace(f"Name: {i},", "")
+        v = v.strip()
+        sub_count[i] = v
+
+    for k, v in sub_count.copy().items():
+        if v != "Half Beef Sub" and v != "Full Beef Sub" and v != "Half Pork Sub" and v != "Full Pork Sub" and v != "Half Lamb Sub" and v != "Full Lamb Sub":
+            del sub_count[k]
+
+    ic(sub_count)
+
     # How many transactions per Clerk per day
 
     ic(final_drink_cnt)
@@ -246,8 +266,8 @@ def from_to_times():
     global df
     global count_sales_time_total
     global clerk_dict
-    from_time = txt_box_from.get("1.0", "6.0")
-    to_time = txt_box_to.get("1.0", "6.0")
+    from_time = txt_box_from.get()
+    to_time = txt_box_to.get()
     from_time = int(from_time)
     to_time = int(to_time)
 
@@ -295,6 +315,18 @@ def sel_file():
     global drinks
     global sauces
     global clerk_dict
+    # CLEAR BOXES
+    txt_box_clerks1.delete("1.0", ctk.END)
+    txt_box_clerks2.delete("1.0", ctk.END)
+    txt_box_clerks3.delete("1.0", ctk.END)
+    txt_box_clerks4.delete("1.0", ctk.END)
+    txt_box_clerks5.delete("1.0", ctk.END)
+    txt_box_clerks6.delete("1.0", ctk.END)
+    txt_box_clerks7.delete("1.0", ctk.END)
+    txt_box_clerks8.delete("1.0", ctk.END)
+    txt_box_clerks9.delete("1.0", ctk.END)
+    txt_box_clerks10.delete("1.0", ctk.END)
+
     # SELECT FILE
     file_sel = filedialog.askopenfilename()
     ext_len = len(file_sel)
@@ -306,7 +338,7 @@ def sel_file():
         df = pd.read_excel(file_sel)
     else:
         messagebox.showerror(message="Wrong File Type! Please Select a XLSX File.")
-    df = pd.read_excel("data/DetailedAudit.xls")
+    df = pd.read_excel(file_sel)
 
     replacements = {'\n': "", "/": "", ":": "", "  ": "_", " ": "_", "_": " "}
 
@@ -440,13 +472,13 @@ lbl_order_sauces.grid(column=1, row=4, padx=5, pady=5)
 lbl_order_time = ctk.CTkLabel(master=fme_main, text="Time Period", font=("Arial bold", 20))
 lbl_order_time.grid(column=1, row=6, padx=5, pady=5)
 
-txt_box_from = ctk.CTkTextbox(master=fme_main, height=10, font=("Arial 10 bold", 20))
+txt_box_from = ctk.CTkEntry(master=fme_main, height=10, font=("Arial 10 bold", 20))
 txt_box_from.grid(column=1, row=7, padx=5, pady=5, sticky="w")
 
 lbl_order_dash = ctk.CTkLabel(master=fme_main, text=" - ", font=("Arial 10 bold", 20))
 lbl_order_dash.grid(column=1, row=7, padx=5, pady=5)
 
-txt_box_to = ctk.CTkTextbox(master=fme_main, height=10, font=("Arial 10 bold", 20))
+txt_box_to = ctk.CTkEntry(master=fme_main, height=10, font=("Arial 10 bold", 20))
 txt_box_to.grid(column=1, row=7, padx=5, pady=5, sticky="e")
 
 btn_disp_det = ctk.CTkButton(master=fme_main, text="Data", command=from_to_times)
