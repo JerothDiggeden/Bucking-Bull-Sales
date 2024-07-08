@@ -5,6 +5,7 @@ import customtkinter as ctk
 from icecream import ic
 from collections import Counter
 from tkinter import filedialog, messagebox
+from PIL import Image
 
 
 pd.set_option('display.max_columns', 10)
@@ -246,6 +247,20 @@ def generate_data():
             pass
 
     ic(sub_count)
+    count_half = 0
+    count_full = 0
+
+    for v in sub_count.values():
+        if "Half" in v:
+            count_half = count_half + 1
+        elif "Full" in v:
+            count_full = count_full + 1
+        else:
+            continue
+
+    ic(count_full)
+    ic(count_half)
+
     sub_total = Counter(sub_count.values())
     sub_total = str(sub_total).replace("Counter", "")
     sub_total = sub_total.replace(", ", "\n")
@@ -261,7 +276,7 @@ def generate_data():
     for i, v in enumerate(unique_id):
         unique_id_str[i] = str(unique_id[i])
 
-    update_ddn_clerks(clerks, employees_tot_sales, unique_id_str, sub_total)
+    update_ddn_clerks(clerks, employees_tot_sales, unique_id_str, sub_total, count_half, count_full)
     return final_drink_cnt, final_sauce_cnt, clerk_add_dict
 
 count_sales_time_total = {}
@@ -332,6 +347,7 @@ def sel_file():
     txt_box_clerks8.delete("1.0", ctk.END)
     txt_box_clerks9.delete("1.0", ctk.END)
     txt_box_clerks10.delete("1.0", ctk.END)
+    lbl_subs.configure(text="")
 
     # SELECT FILE
     file_sel = filedialog.askopenfilename()
@@ -393,7 +409,7 @@ def sel_file():
     drinks, sauces, clerk_dict = generate_data()
 
 
-def update_ddn_clerks(clerks, sales, id, subs):
+def update_ddn_clerks(clerks, sales, id, subs, count_half, count_full):
     ddn_clerks.configure(values=clerks)
     counter = 0
     for c in clerks:
@@ -402,7 +418,9 @@ def update_ddn_clerks(clerks, sales, id, subs):
         counter = counter + 1
         exec(one)
     ddn_orders.configure(values=id)
-    lbl_sub_count.configure(text=subs)
+    lbl_subs_full.configure(text=f"Total Full Subs: {count_half}")
+    lbl_subs_half.configure(text=f"Total Half Subs: {count_full}")
+    lbl_subs.configure(text=subs)
 
 
 def disp_details():
@@ -460,6 +478,18 @@ txt_box_clerks9.grid(column=0, row=6, padx=5, pady=5, sticky="e")
 txt_box_clerks10 = ctk.CTkTextbox(master=fme_main, height=10, font=("Arial 10 bold", 20), width=180)
 txt_box_clerks10.grid(column=0, row=7, padx=5, pady=5, sticky="e")
 
+txt_box_clerks7 = ctk.CTkTextbox(master=fme_main, height=10, font=("Arial 10 bold", 20), width=180)
+txt_box_clerks7.grid(column=0, row=8, padx=5, pady=5, sticky="e")
+txt_box_clerks8 = ctk.CTkTextbox(master=fme_main, height=10, font=("Arial 10 bold", 20), width=180)
+txt_box_clerks8.grid(column=0, row=9, padx=5, pady=5, sticky="e")
+txt_box_clerks9 = ctk.CTkTextbox(master=fme_main, height=10, font=("Arial 10 bold", 20), width=180)
+txt_box_clerks9.grid(column=0, row=8, padx=5, pady=5, sticky="w")
+txt_box_clerks10 = ctk.CTkTextbox(master=fme_main, height=10, font=("Arial 10 bold", 20), width=180)
+txt_box_clerks10.grid(column=0, row=9, padx=5, pady=5, sticky="w")
+
+img_logo = ctk.CTkImage(light_image=Image.open("data/logo.png"))
+
+
 ddn_clerks = ctk.CTkOptionMenu(master=fme_main, values=["Clerk"])
 ddn_clerks.grid(column=1, row=1, padx=5, pady=5, sticky="w")
 
@@ -495,10 +525,16 @@ btn_disp_det.grid(column=1, row=8, padx=5, pady=5)
 lbl_times = ctk.CTkLabel(master=fme_main, text="", font=("Arial 10 bold", 20))
 lbl_times.grid(column=1, row=9, padx=5, pady=5)
 
-lbl_subs = ctk.CTkLabel(master=fme_main, text="Daily Sub Count", font=("Arial 10 bold", 20))
-lbl_subs.grid(column=1, row=8, padx=5, pady=5)
+lbl_subs = ctk.CTkLabel(master=fme_main, text="Daily Sub Count", font=("Arial Bold", 20))
+lbl_subs.grid(column=0, row=10, padx=5, pady=5)
 
-lbl_sub_count = ctk.CTkLabel(master=fme_main, text="", font=("Arial 10 bold", 20))
-lbl_sub_count.grid(column=1, row=9, padx=5, pady=5)
+lbl_subs = ctk.CTkLabel(master=fme_main, text=":", font=("Arial", 20))
+lbl_subs.grid(column=0, row=11, padx=5, pady=5)
+
+lbl_subs_full = ctk.CTkLabel(master=fme_main, text="Total Full Subs:", font=("Arial Bold", 20))
+lbl_subs_full.grid(column=0, row=12, padx=5, pady=5)
+
+lbl_subs_half = ctk.CTkLabel(master=fme_main, text="Total Half Subs:", font=("Arial Bold", 20))
+lbl_subs_half.grid(column=0, row=13, padx=5, pady=5)
 
 root.mainloop()
